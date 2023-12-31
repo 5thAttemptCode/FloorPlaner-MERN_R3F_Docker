@@ -1,4 +1,8 @@
 import React, { useState } from 'react'
+import axios from 'axios'
+import { toast } from 'react-hot-toast'
+import { useNavigate } from 'react-router-dom'
+
 
 export default function Register() {
 
@@ -7,8 +11,27 @@ export default function Register() {
     password: ""
   })
 
-  const registerUser = (e) => {
+  const registerUser = async (e) => {
+    
+    const navigate = useNavigate()
+
     e.preventDefault()
+    const { email, password } = data
+
+    try{
+      const { data } = await axios.post("/register", {
+        email, password
+      })
+      if(data.error){
+        toast.error(data.error)
+      } else {
+        setData({})
+        toast.success("Login successfull")
+        navigate("/login")//direct them later to shopping-cart or whatever
+      }
+    } catch(error){
+      console.log(error)
+    }
   }
 
   return (
