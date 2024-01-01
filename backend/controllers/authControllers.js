@@ -11,35 +11,37 @@ const test = (req, res) => {
 
 
 //Register endpoint
+// Register endpoint
 const registerUser = async (req, res) => {
     try{
+        const { email, password } = req.body // Destructure first
+
         if(!password || password.length < 6){
             return res.json({
                 error: "Password with min 6 characters required"
-            })
+            });
         }
 
-        const { email, password } = req.body
-        //Check if email was entered
-        const exist = await User.findOne({ email })
+        // Check if email was entered
+        const exist = await User.findOne({ email });
         if(exist){
             return res.json({
                 error: "Email is already signed up"
-            })
+            });
         }
 
-        const hashedPassword = await hashPassword(password)
+        const hashedPassword = await hashPassword(password);
 
-        //Create user in DB
+        // Create user in DB
         const user = await User.create({
             email, 
             password : hashedPassword
-        })
+        });
 
-        return res.json(user)
+        return res.json(user);
 
     } catch(error){
-        console.log(error)
+        console.log(error);
     }
 }
 
