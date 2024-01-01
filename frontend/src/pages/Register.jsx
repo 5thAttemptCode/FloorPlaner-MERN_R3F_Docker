@@ -11,9 +11,9 @@ export default function Register() {
     password: ""
   })
 
+  const navigate = useNavigate()
+
   const registerUser = async (e) => {
-    
-    const navigate = useNavigate()
 
     e.preventDefault()
     const { email, password } = data
@@ -27,7 +27,7 @@ export default function Register() {
       } else {
         setData({})
         toast.success("Login successfull")
-        navigate("/login")//direct them later to shopping-cart or whatever
+        navigate("/checkout")//direct them later to shopping-cart or whatever
       }
     } catch(error){
       console.log(error)
