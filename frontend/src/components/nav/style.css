@@ -4,15 +4,26 @@ nav{
     display: flex;
     justify-content: space-between;
     padding-inline: 5rem;
+
+    div{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.7rem;
+
+        > a, 
+        > button{
+            border: 2px solid var(--darkColor);
+            color: var(--darkColor);
+            padding: 0.7rem 1.5rem;
+            border-radius: var(--borderRadiusTwo);
+
+            &.floor-config{
+                background: var(--accentColor);
+                color: var(--lightColor);
+            }
+        }
+    }
 }
 
-nav > div{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1.5rem;
-}
 
-.floor-config{
-    background: rgb(26, 23, 203);
-}

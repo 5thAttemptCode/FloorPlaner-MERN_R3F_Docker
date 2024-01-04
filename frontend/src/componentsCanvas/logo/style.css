@@ -1,0 +1,14 @@
+.name{
+    position: fixed;
+    top: 6.3rem;
+    left: 6.3rem;
+
+    & > h3, & > h4{
+        color: var(--lightColor);
+    }
+
+    & > h4{
+        font-weight: 400;
+        font-style: italic;
+    }
+}

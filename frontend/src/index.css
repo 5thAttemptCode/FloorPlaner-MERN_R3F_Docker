@@ -1,10 +1,46 @@
+:root{
+  --lightColor: whitesmoke;
+  --darkColor: #171717;
+  --accentColor: #1a17cb;
+
+  --borderRadiusOne: 30px;
+  --borderRadiusTwo: 50px;
+}
+
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  color: white;
+  text-decoration: none;
+  font-family: Poppins;
 }
 
 body{
-  background: #171717;
+  background: var(--lightColor);
+}
+
+form{
+  display: flex;
+  flex-direction: column;
+  height: 400px;
+  width: 300px;
+}
+
+section{
+  height: calc(100vh - 12vh);
+  padding-inline: 5rem;
+  padding-bottom: 2rem;
+}
+
+button{
+  background: var(--accentColor);
+  color: var(--lightColor);
+  cursor: pointer;
+  border: 2px solid var(--lightColor);
+  padding: 0.7rem 1.5rem;
+  border-radius: var(--borderRadiusTwo);
+}
+
+a{
+  color: var(--lightColor);
 }

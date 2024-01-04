@@ -1,30 +1,12 @@
 .canvas{
     padding-inline: 5rem;
     padding-bottom: 2rem;
-}
 
-canvas{
-    height: calc((100vh - 12vh) - 2rem);
-    width: 100%;
-    border: 2px solid white;
-    border-radius: 30px;
-}
-
-.dashboard{
-    position: fixed; 
-    bottom: 3rem;
-    left: 50%;
-    transform: translateX(-50%);
-    width: calc(100% - 12rem);
-    backdrop-filter: blur(10px);
-    border-radius: 50px;
-    padding: 0.7rem;
-    border: 2px solid rgb(255, 255, 255, 0.2);
-    background: rgb(0, 0, 0, 0.05);
-    transition: all 0.3s
-}
-
-.dashboard:hover{
-    border: 2px solid white;
-    background: rgb(0, 0, 0, 0.5);
+    & canvas{
+        height: calc((100vh - 12vh) - 2rem);
+        width: 100%;
+        border: 2px solid var(--lightColor);
+        border-radius: var(--borderRadiusOne);
+        background: var(--darkColor);
+    }
 }

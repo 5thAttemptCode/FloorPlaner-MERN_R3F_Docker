@@ -6,8 +6,8 @@ export default function Nav() {
   return (
     <nav>
       <div>
-        <Link to="/">Floor Planner</Link>
-        <Link className='floor-config' to="/configurator">FLOOR CONFIGURATOR</Link>
+        <Link to="/">FLOOR PLANER</Link>
+        <Link className='floor-config' to="/configurator">CONFIGURATOR</Link>
       </div>
       <div>
         <Link to="/login" >LOGIN</Link>

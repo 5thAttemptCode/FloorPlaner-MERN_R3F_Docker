@@ -1,0 +1,18 @@
+.dashboard{
+    position: fixed;
+    bottom: 3rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 12rem);
+    backdrop-filter: blur(10px);
+    border-radius: var(--borderRadiusTwo);
+    padding: 0.7rem;
+    border: 2px solid rgb(255, 255, 255, 0.2);
+    background: rgb(0, 0, 0, 0.05);
+    transition: all 0.3s;
+
+    &:hover{
+        border: 2px solid var(--lightColor);
+        background: rgb(0, 0, 0, 0.5);
+    }
+}
