@@ -1,5 +1,5 @@
 .dashboard{
-    position: fixed;
+    position: absolute;
     bottom: 3rem;
     left: 50%;
     transform: translateX(-50%);
@@ -10,9 +10,26 @@
     border: 2px solid rgb(255, 255, 255, 0.2);
     background: rgb(0, 0, 0, 0.05);
     transition: all 0.3s;
+    display: flex;
+    justify-content: space-between;
 
     &:hover{
         border: 2px solid var(--lightColor);
         background: rgb(0, 0, 0, 0.5);
+    }
+
+    .floor-material-buttons{
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-right: 1rem;
+
+        .floor-material-button{
+            height: 50px;
+            aspect-ratio: 1;
+            border-radius: 50%;
+            cursor: pointer;
+            border: 2px solid var(--lightColor);
+        }
     }
 }
