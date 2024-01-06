@@ -6,12 +6,17 @@ footer{
     .footer-container{
         height: 50%;
         display: flex;
-        justify-content: space-between;
         align-items: center;
         padding-inline: 5rem;
 
         &:nth-child(1){
             border-bottom: 2px solid rgb(178, 178, 178);
+            justify-content: space-between;
+        }
+
+        &:nth-child(2){
+            flex-direction: column;
+            justify-content: center;
         }
 
         ul{
@@ -21,6 +26,10 @@ footer{
             li a{
                 color: black
             }
+        }
+
+        p{
+            margin-top: 1rem;
         }
 
         div{

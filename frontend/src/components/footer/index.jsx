@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom'
 export default function Footer() {
   return (
     <footer>
+
       <div className="footer-container">
         <h3>Floor Planer</h3>
         <ul>
@@ -19,7 +20,16 @@ export default function Footer() {
           <Link to="/register">Register</Link>
         </div>
       </div>
-      <div className="footer-container"></div>
+
+      <div className="footer-container">
+        <ul>
+          <li href="#">Facebook</li>
+          <li href="#">Twitter</li>
+          <li href="#">Instagram</li>
+        </ul>
+        <p>&#169; Floor Planer</p>
+      </div>
+      
     </footer>
   )
 }
