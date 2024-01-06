@@ -27,7 +27,7 @@ export function Room(props) {
         rotation={[0, 0, -Math.PI / 2]} 
         scale={[0.592, 1, 1]}
       >
-        <meshStandardMaterial />
+         <meshStandardMaterial color={snap.wallColor} />
       </mesh>
       <mesh 
         receiveShadow 
@@ -37,7 +37,7 @@ export function Room(props) {
         rotation={[Math.PI / 2, -Math.PI / 2, 0]} 
         scale={[0.592, 1, 1]}
       >
-        <meshStandardMaterial />
+         <meshStandardMaterial color={snap.wallColor} />
       </mesh>
     </group>
   )

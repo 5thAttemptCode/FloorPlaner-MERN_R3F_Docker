@@ -7,7 +7,8 @@ const state = proxy({
         {url: '/textures/texture3/baseColor3.jpg'}
     ],
     
-    texture: '/textures/texture1/baseColor1.jpg'
+    texture: '/textures/texture1/baseColor1.jpg',
+    wallColor: '#ffffff'
 })
 
 export { state }

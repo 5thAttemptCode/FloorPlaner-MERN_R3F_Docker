@@ -13,6 +13,10 @@
     display: flex;
     justify-content: space-between;
 
+    p{
+        color: var(--lightColor);
+    }
+
     &:hover{
         border: 2px solid var(--lightColor);
         background: rgb(0, 0, 0, 0.5);
@@ -32,4 +36,39 @@
             border: 2px solid var(--lightColor);
         }
     }
+
+    .color-input{
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+
+        .color-picker-container {
+            position: relative;
+            width: 50px;
+            aspect-ratio: 1;
+    
+            .color-switch {
+                border-radius: 50%;
+                height: 100%;
+                width: 100%;
+                border: 2px solid var(--lightColor);
+            }
+    
+            .color-picker {
+                opacity: 0;
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                left: 0;
+                top: 0;
+                cursor: pointer;
+            }
+        }
+    }
 }
+
+
+  
+
+  
+  
