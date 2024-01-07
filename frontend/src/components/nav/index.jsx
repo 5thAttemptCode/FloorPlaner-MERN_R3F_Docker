@@ -9,6 +9,7 @@ export default function Nav() {
       <div>
         <Link to="/">FLOOR PLANER</Link>
         <Link className='floor-config' to="/configurator">3D CONFIGURATOR</Link>
+        <Link to="/floor-materials">FLOOR MATERIALS</Link>
       </div>
       <div>
         <Link to="/login" className='icon-button' ><UserCircle /></Link>
