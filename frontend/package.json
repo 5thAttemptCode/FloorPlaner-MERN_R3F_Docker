@@ -10,6 +10,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.3",
+    "@emotion/styled": "^11.11.0",
+    "@mui/material": "^5.15.3",
     "@phosphor-icons/react": "^2.0.15",
     "@react-three/drei": "^9.92.7",
     "@react-three/fiber": "^8.15.12",
