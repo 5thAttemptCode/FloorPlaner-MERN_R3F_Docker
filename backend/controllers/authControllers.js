@@ -19,18 +19,18 @@ const registerUser = async (req, res) => {
         if(!password || password.length < 6){
             return res.json({
                 error: "Password with min 6 characters required"
-            });
+            })
         }
 
         // Check if email was entered
-        const exist = await User.findOne({ email });
+        const exist = await User.findOne({ email })
         if(exist){
             return res.json({
                 error: "Email is already signed up"
-            });
+            })
         }
 
-        const hashedPassword = await hashPassword(password);
+        const hashedPassword = await hashPassword(password)
 
         // Create user in DB
         const user = await User.create({
@@ -38,10 +38,10 @@ const registerUser = async (req, res) => {
             password : hashedPassword
         });
 
-        return res.json(user);
+        return res.json(user)
 
     } catch(error){
-        console.log(error);
+        console.log(error)
     }
 }
 
@@ -78,17 +78,25 @@ const loginUser = async (req, res) => {
 }
 
 const getProfile = (req, res) => {
-    const {token} = req.cookies
-    if(token){
-        jwt.verify(token, process.env.VITE_JWT_SECRET, {}, (err, user) => {
-            if(err) throw err
-            res.json(user)
+    const { token } = req.cookies
+  
+    if (token) {
+      try {
+        jwt.verify(token, process.env.VITE_JWT_SECRET, (err, user) => {
+          if (err) {
+            res.status(500).json({ error: 'Error verifying token', details: err })
+            throw err
+          }
+          res.json(user)
         })
+      } catch(error) {
+        console.log("Failed to decode or verify token:", error)
+        res.status(500).json({ error: 'Failed to decode or verify token' })
+      }
     } else {
-        res.json(null)
+      res.status(401).json({ error: 'Not logged in' })
     }
-}
-
+  }
 
 
 module.exports = {
