@@ -3,6 +3,7 @@ import './style.css'
 import { useSnapshot } from 'valtio'
 import { state } from '../floorMaterial'
 import { Lightbulb } from "@phosphor-icons/react"
+import { Tooltip } from '@mui/material'
 
 
 export default function Dashboard({setLight, setEnv, light, env}) {
@@ -15,12 +16,14 @@ export default function Dashboard({setLight, setEnv, light, env}) {
       <div className='floor-material-buttons'>
         <p>Choose floor material:</p>
         {snap.textures.map((textureObj, index) => (
-          <div 
-            key={index} 
-            className={`floor-material-button`} 
-            style={{ backgroundImage: `url(${textureObj.url})` }}  
-            onClick={() => (state.texture = textureObj.url)}
-          ></div>
+          <Tooltip placement="top-start" title={textureObj.name} key={index}>
+              <div
+              className={`floor-material-button`} 
+              style={{ backgroundImage: `url(${textureObj.url})` }}  
+              onClick={() => (state.texture = textureObj.url)}
+              >
+              </div>
+            </Tooltip>
         ))}
       </div>
       <div className='color-input'>
