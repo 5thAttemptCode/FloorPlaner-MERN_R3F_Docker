@@ -1,9 +1,12 @@
 nav{
+    position: fixed;
+    top: 0;
     width: 100%;
     height: 12vh;
     display: flex;
     justify-content: space-between;
     padding-inline: 5rem;
+    background: var(--lightColor);
 
     div{
         display: flex;

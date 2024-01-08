@@ -7,7 +7,6 @@ export default function Home() {
   return (
     <section>
       <div className="container">
-
         <div className='box upper'>
           <h2>DIGITAL</h2>
           <h2>PLANNING</h2>
@@ -25,7 +24,6 @@ export default function Home() {
           <h1>DEFINING</h1>
           <h1>&#169;FLOORS&nbsp;&nbsp;&nbsp;&nbsp;</h1>
         </div>
-        
       </div>
     </section>
   )

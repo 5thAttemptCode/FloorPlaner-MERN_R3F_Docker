@@ -7,9 +7,9 @@ export default function Checkout() {
   const { user } = useContext(UserContext)
    
   return (
-    <div>
+    <section className='checkout'>
       <h1>CHECKOUT</h1>
-      {!!user && (<h2>Hello {user.email}</h2>)}
-    </div>
+      {!!user && (<h5>Hello {user.email}</h5>)}
+    </section>
   )
 }

@@ -16,12 +16,12 @@ export default function Configurator() {
   return (
     <div className="canvas">
       <Canvas>
-        <OrbitControls />
+        <OrbitControls enableZoom={false} />
         {/* <directionalLight position={[0.5, 2, 1.5]} color="white" castShadow /> */}
         <Center>
           <Room rotation-y={-Math.PI / 4} />
         </Center>
-        {light && <LightSwitch brightness={2} color={"white"} />}
+        {light && <LightSwitch brightness={5} color={"white"} />}
         {env && <Environment preset='city' />}
       </Canvas>
       
