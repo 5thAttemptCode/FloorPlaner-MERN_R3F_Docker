@@ -1,7 +1,7 @@
 :root{
   --lightColor: whitesmoke;
   --darkColor: #171717;
-  --accentColor: #1a17cb;
+  --accentColor: #572dff;
 
   --borderRadiusOne: 30px;
   --borderRadiusTwo: 50px;
@@ -13,6 +13,7 @@
   box-sizing: border-box;
   text-decoration: none;
   font-family: Poppins;
+  list-style: none;
 }
 
 body{
@@ -27,7 +28,8 @@ form{
 }
 
 section{
-  height: calc(100vh - 12vh);
+  min-height: 100vh;
+  margin-top: 12vh;
   padding-inline: 5rem;
   padding-bottom: 2rem;
 }
@@ -43,4 +45,14 @@ button{
 
 a{
   color: var(--lightColor);
+}
+
+.icon-button{
+  height: 50px;
+  aspect-ratio: 1;
+  font-size: 27px;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
