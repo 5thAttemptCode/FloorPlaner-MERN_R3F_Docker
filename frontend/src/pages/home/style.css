@@ -10,13 +10,6 @@
         height: 50%;
     
         &.upper{
-            
-            h2{
-                font-size: 50px;
-                font-weight: 400;
-                line-height: 0.9;
-                color: var(--lightColor);
-            }
 
             p{
                 margin-block: 1rem 1.5rem;

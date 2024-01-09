@@ -3,6 +3,7 @@ import './style.css'
 import axios from 'axios'
 import { toast } from 'react-hot-toast'
 import { Link, useNavigate } from 'react-router-dom'
+import H3 from '../../components/subHeaderH3'
 
 
 export default function Login() {
@@ -37,6 +38,7 @@ export default function Login() {
   return (
     <section className='user-form'>
       <form onSubmit={loginUser}>
+        <H3 text="Login" />
         <label>Name</label>
         <input type="email" placeholder='Your e-mail' value={data.email} onChange={(e) => setData({ ...data, email: e.target.value})} />
         <label>Password</label>

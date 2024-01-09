@@ -1,6 +1,7 @@
 import React from 'react'
 import "./style.css"
-import { Link } from 'react-router-dom'
+import H2 from '../../components/subHeaderH2'
+import LinkButton from '../../components/linkButton'
 
 
 export default function Home() {
@@ -8,15 +9,15 @@ export default function Home() {
     <section>
       <div className="container">
         <div className='box upper'>
-          <h2>DIGITAL</h2>
-          <h2>PLANNING</h2>
+          <H2 text="DIGITAL" /> 
+          <H2 text="PLANING" /> 
           <p>We created the SOLUTION for your floor build. We all been there;  chose 
             a floor design for our new home, and when applied  you don't like it!
             That's why we created the digital floor planner.
           </p>
           <div className="cta">
-            <Link to="/configurator">Configurate your floor</Link>
-            <Link to="register">Create Account</Link>
+            <LinkButton background="--accentColor" color="--lightColor" to="/configurator">Configurate your floor</LinkButton>
+            <LinkButton background="--darkColor" color="--lightColor" to="/register">Create Account</LinkButton>
           </div>
         </div>
 

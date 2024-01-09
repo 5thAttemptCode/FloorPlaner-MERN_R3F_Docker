@@ -1,6 +1,9 @@
-section{
-    > h1{
-        margin-block: 2rem 5rem;
+.floor-materials{
+
+    padding-top: 2rem;
+
+    > h2{
+        margin-block-end: 4rem;
     }
 
     .floor-material-container{
@@ -10,10 +13,11 @@ section{
         border: 2px solid var(--darkColor);
         border-radius: var(--borderRadiusTwo);
         padding: 1rem;
+        background: rgb(223, 223, 223);
     
         &:nth-child(3),
         &:nth-child(4){
-            margin-block: 2rem;
+            margin-block: 3rem;
         }
     
         div, img{
