@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './style.css'
 import { useSnapshot } from 'valtio'
 import { state } from '../floorMaterial'
@@ -8,6 +8,7 @@ import { Tooltip } from '@mui/material'
 
 export default function Dashboard({setLight, setEnv, light, env}) {
 
+  const [ activeFloorBtn, setActiveFloorBtn ] = useState(0)
   const snap = useSnapshot(state)
 
   return (
@@ -17,12 +18,15 @@ export default function Dashboard({setLight, setEnv, light, env}) {
         <p>Choose floor material:</p>
         {snap.textures.map((textureObj, index) => (
           <Tooltip placement="top-start" title={textureObj.name} key={index}>
-              <div
-              className={`floor-material-button`} 
+            <div
+              className={`floor-material-button ${activeFloorBtn === index ? 'active' : ''}`} 
               style={{ backgroundImage: `url(${textureObj.url})` }}  
-              onClick={() => (state.texture = textureObj.url)}
-              >
-              </div>
+              onClick={() => {
+                state.texture = textureObj.url
+                setActiveFloorBtn(index)
+              }}
+            >
+            </div>
             </Tooltip>
         ))}
       </div>

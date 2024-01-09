@@ -35,6 +35,10 @@
             cursor: pointer;
             border: 2px solid var(--lightColor);
         }
+
+        .active{
+            border: 4px solid rgb(0, 196, 0);
+        }
     }
 
     .color-input{
