@@ -21,11 +21,6 @@ nav{
             padding: 0.7rem 1.5rem;
             border-radius: var(--borderRadiusTwo);
             font-weight: 600;
-
-            &.floor-config{
-                background: var(--accentColor);
-                color: var(--lightColor);
-            }
         }
     }
 }

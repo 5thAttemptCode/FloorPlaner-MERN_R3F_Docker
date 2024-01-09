@@ -1,0 +1,7 @@
+.link-button{
+    border: 2px solid var(--darkColor);
+    color: var(--darkColor);
+    padding: 0.7rem 1.5rem;
+    border-radius: var(--borderRadiusTwo);
+    font-weight: 600;
+}

@@ -1,6 +1,7 @@
 import React from 'react'
 import './style.css'
-import { Link } from 'react-router-dom'
+import H3 from '../../components/subHeaderH3'
+import LinkButton from '../linkButton'
 
 
 export default function Footer() {
@@ -8,7 +9,7 @@ export default function Footer() {
     <footer>
 
       <div className="footer-container">
-        <h3>Floor Planer</h3>
+        <H3 text="Floor Planer" />
         <ul>
           <li><a href="/#" target="_blank">About Us</a></li>
           <li><a href="/#" target="_blank">Career</a></li>
@@ -16,8 +17,8 @@ export default function Footer() {
           <li><a href="/#" target="_blank">Contact Us</a></li>
         </ul>
         <div>
-          <Link to="/login">Login</Link>
-          <Link to="/register">Register</Link>
+          <LinkButton background="--accentColor" color="--lightColor" to="/login">Login</LinkButton>
+          <LinkButton to="/register">Register</LinkButton>
         </div>
       </div>
 
@@ -27,7 +28,7 @@ export default function Footer() {
           <li href="#">Twitter</li>
           <li href="#">Instagram</li>
         </ul>
-        <p>&#169; Floor Planer</p>
+        <H3 text="&#169; Floor Planer" />
       </div>
       
     </footer>
