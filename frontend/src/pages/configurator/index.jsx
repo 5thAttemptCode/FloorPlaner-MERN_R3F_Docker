@@ -21,7 +21,7 @@ export default function Configurator() {
         <Center>
           <Room rotation-y={-Math.PI / 4} />
         </Center>
-        {light && <LightSwitch brightness={5} color={"white"} />}
+        {light && <LightSwitch brightness={7} color={"white"} />}
         {env && <Environment preset='city' />}
       </Canvas>
       
