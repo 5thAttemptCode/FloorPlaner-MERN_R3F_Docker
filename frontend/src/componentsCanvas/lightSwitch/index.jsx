@@ -5,8 +5,8 @@ export default function LightSwitch({ brightness, color }) {
   return (
     <mesh>
       <rectAreaLight
-        width={4}
-        height={4}
+        width={6}
+        height={6}
         color={color}
         intensity={brightness}
         position={[0, 0, 5]}

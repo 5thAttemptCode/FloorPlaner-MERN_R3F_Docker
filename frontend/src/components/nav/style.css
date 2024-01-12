@@ -6,7 +6,7 @@ nav{
     width: calc(100% - 10rem);
     display: flex;
     justify-content: space-between;
-    background: var(--lightColor);
+    background: white;
     border: 2px solid var(--darkColor);
     border-radius: var(--borderRadiusTwo);
     margin-top: 0.75rem;

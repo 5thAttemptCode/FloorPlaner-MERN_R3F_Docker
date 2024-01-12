@@ -4,8 +4,11 @@ import { useSnapshot } from 'valtio'
 import { state } from '../../componentsCanvas/floorMaterial'
 import H2 from '../../components/subHeaderH2'
 import H3 from '../../components/subHeaderH3'
-import ShoppingButton from '../../components/shoppingButton'
 import H4 from '../../components/subHeaderH4'
+import ShoppingEllipse from '../../components/shoppingEllipse'
+import Description from '../../components/descriptionPtag'
+import Container from '../../components/container'
+import Box from '../../components/box'
 
 
 export default function FloorMaterials() {
@@ -14,17 +17,20 @@ export default function FloorMaterials() {
 
   return (
     <section className='floor-materials'>
-      <H2 color="--darkColor" text="Select the finest floor materials" />
+      <span>
+        <H2 color="--darkColor" text="Select the finest floor materials" />
+        <H3 text="Each package contains 1m² of floor material" />
+      </span>
       {snap.textures.map((floor, index) => (
-        <div className='floor-material-container' key={index}>
-          <div className='floor-info'>
-            <H3 text={floor.name} />
-            <p>{floor.description}</p>
-            <ShoppingButton />
-            <H4 text="*Each package contains 1m² of floor material" />
-          </div>
+        <Container key={floor.id}>
           <img src={floor.url} alt="" />
-        </div>
+          <Box>
+            <H3 text={floor.name} />
+            <H4 text={`$${floor.price} per 1m²`} />
+            <Description description={floor.description} />
+            <ShoppingEllipse />
+          </Box>
+        </Container>
       ))}
     </section>
   )

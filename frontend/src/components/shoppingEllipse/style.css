@@ -1,0 +1,14 @@
+.shopping-ellipse {
+    display: flex; 
+    gap: 1rem;
+    padding: 0.5rem;
+
+    input{
+        width: 5em;
+        border-radius: var(--borderRadiusTwo);
+        padding-inline: 1em;
+        outline: none;
+        border: 1px solid var(--darkColor)
+    }
+}
+

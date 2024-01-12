@@ -1,21 +1,22 @@
 import React from 'react'
 import "./style.css"
-import H2 from '../../components/subHeaderH2'
 import LinkButton from '../../components/linkButton'
 import { useSnapshot } from 'valtio'
 import { state } from '../../components/floorInfo'
 import Container from '../../components/container'
 import Box from '../../components/box'
+import H2 from '../../components/subHeaderH2'
 import H3 from '../../components/subHeaderH3'
+import Description from '../../components/descriptionPtag'
 
 
 export default function Home() {
 
   const snap = useSnapshot(state)
   return (
-    <section>
+    <section className='home'>
       <div className="container">
-        <div className='box upper'>
+        <div className='home-box upper'>
           <H2 text="DIGITAL" /> 
           <H2 text="PLANING" /> 
           <p>We created the SOLUTION for your floor build. We all been there;  chose 
@@ -27,13 +28,13 @@ export default function Home() {
             <LinkButton background="--darkColor" color="--lightColor" to="/register">Create Account</LinkButton>
           </div>
         </div>
-        <div className='box lower'>
+        <div className='home-box lower'>
           <h1>DEFINING</h1>
           <h1>&#169;FLOORS&nbsp;&nbsp;&nbsp;&nbsp;</h1>
         </div>
       </div>
 
-      <H3 text="A CLOSER LOOK" />    
+      <H2 color="--darkColor" text="A CLOSER LOOK" />    
       {snap.floorInfo.map((floor, index) => (
         <Container key={index}>
           <div className="img">
@@ -41,7 +42,7 @@ export default function Home() {
           </div>
           <Box>
             <H3 text={floor.title}/>
-            <p>{floor.description}</p>
+            <Description description={floor.description} />
           </Box>
         </Container>
       ))}

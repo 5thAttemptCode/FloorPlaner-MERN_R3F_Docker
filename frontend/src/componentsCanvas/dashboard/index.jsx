@@ -4,6 +4,7 @@ import { useSnapshot } from 'valtio'
 import { state } from '../floorMaterial'
 import { Lightbulb } from "@phosphor-icons/react"
 import { Tooltip } from '@mui/material'
+import AddToCartButton from '../../components/addToCartbutton'
 
 
 export default function Dashboard({setLight, setEnv, light, env}) {
@@ -29,6 +30,7 @@ export default function Dashboard({setLight, setEnv, light, env}) {
             </div>
             </Tooltip>
         ))}
+        <AddToCartButton />
       </div>
       <div className='color-input'>
         <p>Choose wall color:</p>

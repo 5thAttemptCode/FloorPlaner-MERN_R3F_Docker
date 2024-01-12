@@ -1,6 +1,6 @@
 .dashboard{
     position: absolute;
-    bottom: 3rem;
+    bottom: 2rem;
     left: 50%;
     transform: translateX(-50%);
     width: calc(100% - 12rem);

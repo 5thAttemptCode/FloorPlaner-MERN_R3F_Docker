@@ -1,5 +1,7 @@
 .container-flex{
     display: flex;
     background: white;
-    border: 2px solid red;
+    border-radius: var(--borderRadiusOne);
+    margin-block: 2rem;
+    overflow: hidden;
 }

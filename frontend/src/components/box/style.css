@@ -1,9 +1,10 @@
-.boxe{
+.box{
+    width: 50%;
+    min-height: 40vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
     gap: 1.5rem;
-    padding-inline: 1rem 7rem;
-    width: 50%;
+    padding-inline: 5em;
 }
