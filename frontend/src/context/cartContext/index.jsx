@@ -1,13 +1,14 @@
 const cart = {
     items: [],
-    addToCart(item) {
-        this.items.push(item)
+    addToCart(texture) {
+        const { id, name, price } = texture;
+        this.items.push({id, name, price})
     },
-    removeFromCart(item) {
-        this.items = this.items.filter(cartItem => cartItem.id !== item.id)
+    removeFromCart(id) {
+        this.items = this.items.filter(cartItem => cartItem.id !== id)
     },
-    isInCart(item) {
-        this.items.some(cartItem => cartItem.id === item.id)
+    isInCart(id) {
+        return this.items.some(cartItem => cartItem.id === id)
     }
 }
 
