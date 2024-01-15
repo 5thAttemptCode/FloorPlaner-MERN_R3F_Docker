@@ -13,7 +13,8 @@ export default function AddToCartButton({ id }) {
     if(snap.textures){
       const textureToAdd = snap.textures.find(texture => texture.id === id)
       if(textureToAdd){
-        state.cart.addToCart(textureToAdd)
+        const { id, name, price } = textureToAdd; 
+        state.cart.addToCart({id, name, price})
       }
     } else{
       console.log("Error, texture not found")
