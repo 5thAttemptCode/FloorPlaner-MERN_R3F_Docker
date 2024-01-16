@@ -28,7 +28,7 @@ export default function FloorMaterials() {
             <H3 text={floor.name} />
             <H4 text={`$${floor.price} per 1m²`} />
             <Description description={floor.description} />
-            <ShoppingEllipse />
+            <ShoppingEllipse floor={floor} />
           </Box>
         </Container>
       ))}
