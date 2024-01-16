@@ -1,16 +1,17 @@
 import React from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import Login from './pages/user/Login'
-import Register from './pages/user/Register'
-import Nav from './components/nav'
-import Home from './pages/home'
-import Configurator from './pages/configurator'
-import Footer from './components/footer'
-import axios from 'axios'
 import { Toaster } from 'react-hot-toast'
-import { UserContextProvider } from './context'
+import { UserContextProvider } from './context/userContext'
+import axios from 'axios'
 import Checkout from './pages/checkout'
+import Configurator from './pages/configurator'
 import FloorMaterials from './pages/floorMaterials'
+import Footer from './components/footer'
+import Home from './pages/home'
+import Login from './pages/user/Login'
+import Nav from './components/nav'
+import Register from './pages/user/Register'
+import { CartProvider } from './context/cartContext'
 
 
 axios.defaults.baseURL = "http://localhost:8000"
@@ -19,6 +20,7 @@ axios.defaults.withCredentials = true
 
 export default function App() {
   return (
+    <CartProvider>
     <UserContextProvider>
       <BrowserRouter>
         <Nav />
@@ -34,5 +36,6 @@ export default function App() {
         <Footer />
       </BrowserRouter>
     </UserContextProvider>
+    </CartProvider>
   )
 }
