@@ -1,0 +1,24 @@
+.checkout{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 2rem;
+    align-items: center;
+
+    .checkout-container{
+        width: 50%;
+        min-height: 100px;
+        padding: 1rem;
+
+        .checkout-item{
+            width: 100%;
+            padding-bottom: 3rem;
+        }
+
+        .checkout-total{
+            padding-block: 1rem;
+            border-top: 2px solid black;
+            border-bottom: 4px solid black;
+        }
+    }
+}
