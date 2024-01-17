@@ -10,11 +10,15 @@ export const CartProvider = (props) => {
     }
 
     const removeFromCart = (itemToRemove) => {
-        setCart((currentCart) => currentCart.filter(item => item.name !== itemToRemove.name));
-      }
+      setCart((currentCart) => currentCart.filter(item => item.name !== itemToRemove.name));
+    }
+
+    const totalPrice = () => {
+      return cart.reduce((total, item) => total + (item.price * item.quantity), 0)
+    }
 
     return (
-      <CartContext.Provider value={{ cart, addToCart, removeFromCart }}>
+      <CartContext.Provider value={{ cart, addToCart, removeFromCart, totalPrice }}>
         {props.children}
       </CartContext.Provider>
     )
