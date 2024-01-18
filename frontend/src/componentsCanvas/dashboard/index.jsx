@@ -4,7 +4,7 @@ import { useSnapshot } from 'valtio'
 import { state } from '../floorMaterial'
 import { Lightbulb } from "@phosphor-icons/react"
 import { Tooltip } from '@mui/material'
-import AddToCartButton from '../../components/addToCartbutton'
+import ShoppingEllipse from '../../components/shoppingEllipse'
 
 
 export default function Dashboard({setLight, setEnv, light, env}) {
@@ -18,7 +18,7 @@ export default function Dashboard({setLight, setEnv, light, env}) {
       <div className='floor-material-buttons'>
         <p>Choose floor material:</p>
         {snap.textures.map((textureObj, index) => (
-          <Tooltip placement="top-start" title={textureObj.name} key={index}>
+          <Tooltip placement="top-start" title={`${textureObj.name} - $${textureObj.price} per m²`} key={index}>
             <div
               className={`floor-material-button ${activeFloorBtn === index ? 'active' : ''}`} 
               style={{ backgroundImage: `url(${textureObj.url})` }}  
@@ -30,7 +30,7 @@ export default function Dashboard({setLight, setEnv, light, env}) {
             </div>
             </Tooltip>
         ))}
-        <AddToCartButton />
+        <ShoppingEllipse floor={snap.textures[activeFloorBtn]} />
       </div>
       <div className='color-input'>
         <p>Choose wall color:</p>
