@@ -9,8 +9,20 @@ export const CartProvider = (props) => {
 
 
   //_______________________________________________
-  const addToCart = (item) => {
-    setCart((currentCart) => [...currentCart, item])
+  const addToCart = (newItem) => {
+    setCart((currentCart) => {
+      const existingItem = currentCart.find(item => item.name === newItem.name)
+
+      if (existingItem) {
+        return currentCart.map(item =>
+          item.name === newItem.name 
+            ? {...item, quantity: item.quantity + newItem.quantity}
+            : item
+        )
+      } else {
+        return [...currentCart, newItem]
+      }
+    })
   }
 
 
