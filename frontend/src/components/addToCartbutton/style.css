@@ -1,0 +1,13 @@
+.clicked{
+    overflow: hidden;
+
+    .icon{
+        animation: moving 0.5s;
+    }
+}
+
+@keyframes moving{
+    100%{
+        transform: translateX(300%);
+    }
+}
