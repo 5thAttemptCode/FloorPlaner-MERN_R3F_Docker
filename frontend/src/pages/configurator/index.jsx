@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import './style.css'
 import { Canvas } from '@react-three/fiber'
-import { Center, Environment, OrbitControls } from '@react-three/drei'
+import { Center, Environment, OrbitControls, PresentationControls } from '@react-three/drei'
 import Room from '../../componentsCanvas/model'
 import LightSwitch from '../../componentsCanvas/lightSwitch'
 import Dashboard from '../../componentsCanvas/dashboard'
@@ -16,10 +16,10 @@ export default function Configurator() {
   return (
     <div className="canvas">
       <Canvas>
-        <OrbitControls enableZoom={false} />
-        {/* <directionalLight position={[0.5, 2, 1.5]} color="white" castShadow /> */}
         <Center>
-          <Room rotation-y={-Math.PI / 4} />
+          <PresentationControls polar={[0, 0.3]} azimuth={[-Math.PI / 5, Math.PI / 5]}>
+            <Room rotation-y={-Math.PI / 4} />
+          </PresentationControls>
         </Center>
         {light && <LightSwitch brightness={7} color={"white"} />}
         {env && <Environment preset='city' />}
