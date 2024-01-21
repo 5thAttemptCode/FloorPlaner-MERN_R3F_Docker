@@ -14,9 +14,13 @@ export default function Dashboard({setLight, setEnv, light, env}) {
 
   return (
     <div className="dashboard">
-      <button className='icon-button' onClick={() => { setLight(!light); setEnv(!env); }}><Lightbulb /></button>
+      <Tooltip placement="top-start" title="Lightswitch">
+        <button className='icon-button' onClick={() => { setLight(!light); setEnv(!env); }}>
+          <Lightbulb />
+        </button>
+      </Tooltip>
       <div className='floor-material-buttons'>
-        <p>Choose floor material:</p>
+        <p>Floor materials:</p>
         {snap.textures.map((textureObj, index) => (
           <Tooltip placement="top-start" title={`${textureObj.name} - $${textureObj.price} per m²`} key={index}>
             <div
@@ -28,12 +32,12 @@ export default function Dashboard({setLight, setEnv, light, env}) {
               }}
             >
             </div>
-            </Tooltip>
+          </Tooltip>
         ))}
         <ShoppingEllipse floor={snap.textures[activeFloorBtn]} />
       </div>
       <div className='color-input'>
-        <p>Choose wall color:</p>
+        <p>Wall color:</p>
         <div className="color-picker-container">
           <div 
             className="color-switch" 
