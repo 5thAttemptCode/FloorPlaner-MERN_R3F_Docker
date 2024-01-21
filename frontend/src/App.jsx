@@ -12,6 +12,7 @@ import Login from './pages/user/Login'
 import Nav from './components/nav'
 import Register from './pages/user/Register'
 import { CartProvider } from './context/cartContext'
+import ScrollToTop  from './utils/scrollToTop'
 
 
 axios.defaults.baseURL = "http://localhost:8000"
@@ -24,6 +25,7 @@ export default function App() {
     <UserContextProvider>
       <BrowserRouter>
         <Nav />
+        <ScrollToTop />
         <Toaster position="bottom-right" toastOption={{duration: 2000}} />
         <Routes>
           <Route path="/" element={<Home />} />
