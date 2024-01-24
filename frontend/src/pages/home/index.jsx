@@ -16,6 +16,7 @@ export default function Home() {
   return (
     <section className='home'>
       <div className="container">
+        <video src="/video.mp4" autoPlay loop />
         <div className='home-box upper'>
           <H2 text="DIGITAL" /> 
           <H2 text="PLANING" /> 

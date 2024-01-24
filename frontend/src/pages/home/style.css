@@ -1,12 +1,23 @@
 .home{
     .container{
+        position: relative;
         height: calc(100vh - 17vh);
         width: 100%;
-        background: var(--darkColor);
+        background: rgb(0, 0, 0, 0.45);
         border-radius: var(--borderRadiusOne);
         padding: 1rem 1.2rem;
         margin-bottom: 5rem;
         overflow: hidden;
+
+        video{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            object-fit: cover;
+        }
     
         .home-box{
             height: 50%;
@@ -59,7 +70,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        background: rgb(224, 225, 234);
+        background: var(--offsetColor);
     }
 }
 
