@@ -1,17 +1,16 @@
 .dashboard{
     position: absolute;
-    bottom: 2rem;
-    left: 50%;
-    transform: translateX(-50%);
-    width: calc(100% - 12rem);
+    top: 2rem;
+    transform: translateY(-1rem);
+    right: 6rem;
+    width: 15%;
+    height: calc(100% - 4rem);
     backdrop-filter: blur(10px);
-    border-radius: var(--borderRadiusTwo);
+    border-radius: var(--borderRadiusOne);
     padding: 0.7rem;
     border: 2px solid rgb(255, 255, 255, 0.2);
     background: rgb(0, 0, 0, 0.05);
     transition: all 0.3s;
-    display: flex;
-    justify-content: space-between;
 
     p{
         color: var(--lightColor);
@@ -23,32 +22,32 @@
     }
 
     .floor-material-buttons{
-        display: flex;
-        align-items: center;
-        gap: 1rem;
-        margin-right: 1rem;
 
-        .floor-material-button{
-            height: 50px;
-            aspect-ratio: 1;
-            border-radius: 50%;
-            cursor: pointer;
-            border: 2px solid var(--lightColor);
-        }
+        .floor-material-buttons-container{
+            display: flex;
+            justify-content: space-between;
 
-        .active{
-            border: 4px solid rgb(0, 196, 0);
+            .floor-material-button{
+                height: 45px;
+                aspect-ratio: 1;
+                border-radius: 50%;
+                cursor: pointer;
+                border: 2px solid var(--lightColor);
+            }
+    
+            .active{
+                border: 4px solid rgb(0, 196, 0);
+            }
+
         }
     }
 
     .color-input{
-        display: flex;
-        gap: 1rem;
         align-items: center;
 
         .color-picker-container {
             position: relative;
-            width: 50px;
+            width: 45px;
             aspect-ratio: 1;
     
             .color-switch {

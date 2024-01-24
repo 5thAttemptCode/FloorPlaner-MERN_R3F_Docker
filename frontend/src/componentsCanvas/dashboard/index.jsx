@@ -21,20 +21,22 @@ export default function Dashboard({setLight, setEnv, light, env}) {
       </Tooltip>
       <div className='floor-material-buttons'>
         <p>Floor materials:</p>
-        {snap.textures.map((textureObj, index) => (
-          <Tooltip placement="top-start" title={`${textureObj.name} - $${textureObj.price} per m²`} key={index}>
-            <div
-              className={`floor-material-button ${activeFloorBtn === index ? 'active' : ''}`} 
-              style={{ backgroundImage: `url(${textureObj.url})` }}  
-              onClick={() => {
-                state.texture = textureObj.url
-                setActiveFloorBtn(index)
-              }}
-            >
-            </div>
-          </Tooltip>
-        ))}
-        <ShoppingEllipse floor={snap.textures[activeFloorBtn]} />
+        <div className="floor-material-buttons-container">
+          {snap.textures.map((textureObj, index) => (
+            <Tooltip placement="top-start" title={`${textureObj.name} - $${textureObj.price} per m²`} key={index}>
+              <div
+                className={`floor-material-button ${activeFloorBtn === index ? 'active' : ''}`} 
+                style={{ backgroundImage: `url(${textureObj.url})` }}  
+                onClick={() => {
+                  state.texture = textureObj.url
+                  setActiveFloorBtn(index)
+                }}
+              >
+              </div>
+            </Tooltip>
+          ))}
+        </div>
+        {/* <ShoppingEllipse floor={snap.textures[activeFloorBtn]} /> */}
       </div>
       <div className='color-input'>
         <p>Wall color:</p>
