@@ -13,10 +13,12 @@ import Description from '../../components/descriptionPtag'
 export default function Home() {
 
   const snap = useSnapshot(state)
+
   return (
     <section className='home'>
       <div className="container">
-        <video src="/video.mp4" autoPlay loop />
+        {/* muted is crucial for autoplay */}
+        <video src="/video.mp4" muted autoPlay loop /> 
         <div className='home-box upper'>
           <H2 text="DIGITAL" /> 
           <H2 text="PLANING" /> 
