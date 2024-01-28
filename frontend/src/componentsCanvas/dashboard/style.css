@@ -1,19 +1,25 @@
 .dashboard{
     position: absolute;
+    right: 6rem;
     top: 2rem;
     transform: translateY(-1rem);
-    right: 6rem;
     width: 15%;
     height: calc(100% - 4rem);
     backdrop-filter: blur(10px);
     border-radius: var(--borderRadiusOne);
-    padding: 0.7rem;
+    padding: 1rem 0.7rem;
     border: 2px solid rgb(255, 255, 255, 0.2);
     background: rgb(0, 0, 0, 0.05);
     transition: all 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 2rem;
 
     p{
         color: var(--lightColor);
+        margin-bottom: 0.5rem;
     }
 
     &:hover{
@@ -26,6 +32,7 @@
         .floor-material-buttons-container{
             display: flex;
             justify-content: space-between;
+            margin-bottom: 0.5rem;
 
             .floor-material-button{
                 height: 45px;
