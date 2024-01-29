@@ -12,10 +12,13 @@ export default function Dashboard({setLight, setEnv, light, env}) {
   const [ activeFloorBtn, setActiveFloorBtn ] = useState(0)
   const snap = useSnapshot(state)
 
+  const [ show, setShow ] = useState(true)
+
   return (
-    <div className="dashboard">
+  <>
+      <div className={show ? "dashboard" : "dashboard hide"}>
       
-      <div className='floor-material-buttons'>
+      <div className='dashboard-container floor-material-buttons'>
         <p>Floor materials</p>
         <div className="floor-material-buttons-container">
           {snap.textures.map((textureObj, index) => (
@@ -34,7 +37,8 @@ export default function Dashboard({setLight, setEnv, light, env}) {
         </div>
         <ShoppingEllipse floor={snap.textures[activeFloorBtn]} />
       </div>
-      <div className='color-input'>
+
+      <div className='dashboard-container color-input'>
         <p>Wall color</p>
         <div className="color-picker-container">
           <div 
@@ -48,12 +52,19 @@ export default function Dashboard({setLight, setEnv, light, env}) {
           />
         </div>
       </div>
-      <div className="lightswitch">
+
+      <div className="dashboard-container lightswitch">
         <p>Lightswitch</p>
         <button className='icon-button' onClick={() => { setLight(!light); setEnv(!env); }}>
           <Lightbulb />
         </button>
       </div>
+
     </div>
+
+    <Tooltip placement="top-start" title="hide/show Dashboard">
+      <div onClick={() => setShow(!show)} className={show ? "toggle-button" : "toggle-button hide"}></div>
+    </Tooltip>
+  </>
   )
 }

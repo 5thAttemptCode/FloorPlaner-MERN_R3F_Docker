@@ -3,20 +3,26 @@
     right: 6rem;
     top: 2rem;
     transform: translateY(-1rem);
-    width: 15%;
+    width: 229px;
     height: calc(100% - 4rem);
     backdrop-filter: blur(10px);
     border-radius: var(--borderRadiusOne);
     padding: 1rem 0.7rem;
     border: 2px solid rgb(255, 255, 255, 0.2);
     background: rgb(0, 0, 0, 0.05);
-    transition: all 0.3s;
+    transition: all 0.2s;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    align-items: flex-start;
+    align-items: center;
     gap: 2rem;
+    overflow: hidden;
 
+    &.hide{
+       right: -10rem;
+       opacity: 0;
+    }
+    
     p{
         color: var(--lightColor);
         margin-bottom: 0.5rem;
@@ -27,11 +33,15 @@
         background: rgb(0, 0, 0, 0.5);
     }
 
-    .floor-material-buttons{
+    .dashboard-container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
 
         .floor-material-buttons-container{
             display: flex;
             justify-content: space-between;
+            width: 100%;
             margin-bottom: 0.5rem;
 
             .floor-material-button{
@@ -45,12 +55,7 @@
             .active{
                 border: 4px solid rgb(0, 196, 0);
             }
-
         }
-    }
-
-    .color-input{
-        align-items: center;
 
         .color-picker-container {
             position: relative;
@@ -77,8 +82,27 @@
     }
 }
 
+.toggle-button{
+    position: absolute;
+    top: 45%;
+    transform: translateY(-50%);
+    right: 21.2%;
+    height: 50px;
+    width: 50px;
+    clip-path: polygon(100% 0, 50% 50%, 100% 100%);
+    background: rgb(255, 255, 255, 0.6);
+    transition: all 0.2s;
+    cursor: pointer;
 
-  
+    &.hide{
+        right: 5.1rem;
+    }
 
-  
+    &:hover{
+        background: var(--lightColor);
+    }
+}
+
+
+
   
