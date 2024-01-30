@@ -1,26 +1,24 @@
 .dashboard{
     position: absolute;
-    right: 6rem;
-    top: 2rem;
-    transform: translateY(-1rem);
-    width: 229px;
-    height: calc(100% - 4rem);
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 230px;
+    height: 80%;
     backdrop-filter: blur(10px);
     border-radius: var(--borderRadiusOne);
     padding: 1rem 0.7rem;
     border: 2px solid rgb(255, 255, 255, 0.2);
     background: rgb(0, 0, 0, 0.05);
-    transition: all 0.2s;
+    transition: all 0.3s;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
     gap: 2rem;
-    overflow: hidden;
 
     &.hide{
-       right: -10rem;
-       opacity: 0;
+        right: calc(-230px - 1rem);
     }
     
     p{
@@ -84,18 +82,18 @@
 
 .toggle-button{
     position: absolute;
-    top: 45%;
+    top: 50%;
     transform: translateY(-50%);
-    right: 21.2%;
+    right: calc(230px + 1rem);
     height: 50px;
     width: 50px;
     clip-path: polygon(100% 0, 50% 50%, 100% 100%);
     background: rgb(255, 255, 255, 0.6);
-    transition: all 0.2s;
+    transition: all 0.3s;
     cursor: pointer;
 
     &.hide{
-        right: 5.1rem;
+        right: 0px;
     }
 
     &:hover{

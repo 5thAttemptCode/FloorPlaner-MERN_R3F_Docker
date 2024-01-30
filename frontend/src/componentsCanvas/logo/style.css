@@ -1,7 +1,7 @@
 .name{
     position: absolute;
-    top: 1rem;
-    left: 6.5rem;
+    top: 1em;
+    left: 1.5em;
 
     > h3, > h4{
         color: var(--lightColor);
