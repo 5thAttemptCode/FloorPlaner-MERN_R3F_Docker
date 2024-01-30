@@ -1,13 +1,21 @@
 .canvas{
+    position: relative;
     margin-top: 14vh;
     padding-inline: 5rem;
     padding-bottom: 2rem;
+    overflow: hidden;
 
-    & canvas{
+    .sub-canvas{
+        position: relative;
         height: calc((100vh - 12vh) - 2rem);
         width: 100%;
-        border: 2px solid var(--lightColor);
-        border-radius: var(--borderRadiusOne);
-        background: var(--darkColor);
+        overflow: hidden;
+
+        & canvas{
+            height: 100%;
+            width: 100%;
+            border-radius: var(--borderRadiusOne);
+            background: var(--darkColor);
+        }
     }
 }

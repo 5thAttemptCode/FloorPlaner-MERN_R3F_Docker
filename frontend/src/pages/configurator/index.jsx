@@ -15,18 +15,20 @@ export default function Configurator() {
   
   return (
     <div className="canvas">
-      <Canvas>
-        <Center>
-          <PresentationControls polar={[0, 0.3]} azimuth={[-Math.PI / 5, Math.PI / 5]}>
-            <Room rotation-y={-Math.PI / 4} />
-          </PresentationControls>
-        </Center>
-        {light && <LightSwitch brightness={7} color={"white"} />}
-        {env && <Environment preset='city' />}
-      </Canvas>
-      
-      <Logo />
-      <Dashboard setLight={setLight} setEnv={setEnv} light={light} env={env} />
+      <div className="sub-canvas">
+        <Canvas>
+          <Center>
+            <PresentationControls polar={[0, 0.3]} azimuth={[-Math.PI / 5, Math.PI / 5]}>
+              <Room rotation-y={-Math.PI / 4} />
+            </PresentationControls>
+          </Center>
+          {light && <LightSwitch brightness={7} color={"white"} />}
+          {env && <Environment preset='city' />}
+        </Canvas>
+        
+        <Logo />
+        <Dashboard setLight={setLight} setEnv={setEnv} light={light} env={env} />
+      </div>
     </div>
   )
 }
