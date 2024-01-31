@@ -17,7 +17,8 @@ COPY . .
 RUN npm run build
 
 # Declaring on which port the application “should” run and not must run.
-#For running the image a different port can be used
+# For running the image a different port can be used
 EXPOSE 5173
 
+# Runs only when the container spins up. It is not part of the Image creation process
 CMD [ "npm", "run", "dev" ]
