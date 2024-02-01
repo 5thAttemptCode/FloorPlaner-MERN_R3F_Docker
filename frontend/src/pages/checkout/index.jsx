@@ -5,7 +5,9 @@ import H4 from '../../components/subHeaderH4'
 import LinkButton from '../../components/linkButton'
 import { CartContext } from '../../context/cartContext'
 import { UserContext } from '../../context/userContext'
-import { Trash } from '@phosphor-icons/react'
+import { Bank, ContactlessPayment, CreditCard, PaypalLogo, Trash, Truck } from '@phosphor-icons/react'
+import { format } from 'date-fns'
+
 
 
 export default function Checkout() {
@@ -19,14 +21,20 @@ export default function Checkout() {
           updateQuantity 
         } = useContext(CartContext)
 
+  let deliveryDate = new Date();
+  deliveryDate.setDate(deliveryDate.getDate() + 3)
+  const formattedDeliveryDate = format(deliveryDate, 'dd.MM.yyyy')
+
+
   return (
     <section className='checkout'>
-      <h1>Order summary</h1>
       {!!user && (<H3 text={user.email} />)}
-      <div className='checkout-container'>
 
+      <div className='checkout-container'>
+        <div className="checkout-item-container one">
+        <h1>Order summary</h1>
         {cart.map((item, index) => (
-          <div className='checkout-item-container' key={index}>
+          <div className='checkout-item-container-container' key={index}>
             <div className="checkout-item info">
               <img src={item.image} alt="" />
               <div>
@@ -35,7 +43,7 @@ export default function Checkout() {
               </div>
             </div>
             <div className="checkout-item price">
-              <div>
+              <div className='input'>
                 <span onClick={() => decreaseQuantity(item)}>-</span>
                 <input 
                   type="number" 
@@ -54,14 +62,25 @@ export default function Checkout() {
             </div>
           </div>
         ))}
+        </div>
 
-        <div className="checkout-total">
+        <div className="checkout-item-container">
+          <H3 text="Expected delivery" />
+          <p><Truck className='icon' size={22} /> - {formattedDeliveryDate}</p>
+        </div>
+
+        <div className="checkout-item-container">
+          <H3 text="We accept" />
+          <span><PaypalLogo size={22} /> <CreditCard size={22} /> <ContactlessPayment size={22} /> <Bank size={22} /></span>
+        </div>
+
+        <div className="checkout-item-container checkout-total">
           <div className="cost-listing">
             <H4 text="Subtotal:" />
             <H4 text={`$${(totalPrice() - ((totalPrice() / 100) * 19)).toFixed(2)}`} />
           </div>
           <div className="cost-listing">
-            <H4 text="Taxes 19%"/>
+            <H4 text="Tax 19%:"/>
             <H4 text={`$${((totalPrice() / 100) * 19).toFixed(2)}`} />
           </div>
           <div className="cost-listing">
@@ -74,8 +93,11 @@ export default function Checkout() {
             <H3 text={`$${totalPrice()}`} />
           </div>
         </div>
+
+        <LinkButton background="--accentColor" color="--lightColor">Pay and Buy</LinkButton>
+
       </div>
-      <LinkButton background="--accentColor" color="--lightColor">Pay and Buy</LinkButton>
+
     </section>
   )
 }
