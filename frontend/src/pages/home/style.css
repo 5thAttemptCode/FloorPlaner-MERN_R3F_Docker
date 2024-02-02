@@ -1,9 +1,14 @@
 .home{
+
+    > h2{
+        margin-block-end: 0.6rem;
+    }
+    
     .container{
         position: relative;
         height: calc(100vh - 17vh);
         width: 100%;
-        background: rgb(0, 0, 0, 0.45);
+        background: rgb(0, 0, 0, 0.47);
         border-radius: var(--borderRadiusOne);
         padding: 1rem 1.2rem;
         margin-bottom: 5rem;
