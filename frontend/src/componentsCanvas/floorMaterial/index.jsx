@@ -19,7 +19,7 @@ const state = proxy({
         {
             id: 98572,
             url: '/textures/texture3/baseColor3.jpg',
-            name: 'CALIFORNIAN WALNUT PLANKS',
+            name: 'CALIFORNIA WALNUT PLANKS',
             price: 17,
             description: `Walnut flooring is a beautiful wood due to its warm, rich tones. It is highly insect repellant, moisture resistant, easy to clean and install. But there are some cons too. Placing in a small room walnut flooring could enclose the space and make it seem even smaller. Moreover, maintenance of keeping the floor clean will be an everyday chore. Walnut is not known for its density, so scratches may appear very fast.`
         },
