@@ -1,8 +1,10 @@
 .floor-materials{
     padding-top: 2rem;
 
-    > h2{
-        margin-block-end: 4rem;
+    span{
+        h2{
+            margin-block-end: 0.6rem;
+        }
     }
 
     img{
@@ -11,5 +13,6 @@
         height: 50vh;
         width: 50%;
         object-fit: cover;
+        border: 1rem solid var(--offsetColor);
     }
 }
