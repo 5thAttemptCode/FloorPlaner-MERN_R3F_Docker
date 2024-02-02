@@ -12,6 +12,7 @@ import { format } from 'date-fns'
 
 export default function Checkout() {
  
+  //Context 
   const { user } = useContext(UserContext)
   const { cart, 
           totalPrice, 
@@ -21,6 +22,7 @@ export default function Checkout() {
           updateQuantity 
         } = useContext(CartContext)
 
+  //Date of delivery
   let deliveryDate = new Date();
   deliveryDate.setDate(deliveryDate.getDate() + 3)
   const formattedDeliveryDate = format(deliveryDate, 'dd.MM.yyyy')
@@ -63,11 +65,15 @@ export default function Checkout() {
           </div>
         ))}
         </div>
-
-        <div className="checkout-item-container">
-          <H3 text="Expected delivery" />
-          <p><Truck className='icon' size={22} /> - {formattedDeliveryDate}</p>
-        </div>
+        
+        {cart.length > 0 && (
+          <div className='checkout-item-container delivery'>
+            <H3 text='Expected delivery' />
+            <p>
+              <Truck className='icon' size={22} /> - {formattedDeliveryDate}
+            </p>
+          </div>
+        )}
 
         <div className="checkout-item-container">
           <H3 text="We accept" />
