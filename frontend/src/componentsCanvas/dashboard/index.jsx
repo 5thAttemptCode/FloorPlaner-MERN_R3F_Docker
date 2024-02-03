@@ -1,23 +1,22 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import './style.css'
 import { useSnapshot } from 'valtio'
 import { state } from '../floorMaterial'
-import { Lightbulb } from "@phosphor-icons/react"
+import { Lightbulb, Wall } from "@phosphor-icons/react"
 import { Tooltip } from '@mui/material'
 import ShoppingEllipse from '../../components/shoppingEllipse'
+import { FloorMaterialContext } from '../../context/floorButtonContext'
 
 
 export default function Dashboard({setLight, setEnv, light, env}) {
 
-  const [ activeFloorBtn, setActiveFloorBtn ] = useState(0)
+  const { activeFloorBtn, setActiveFloorBtn } = useContext(FloorMaterialContext);
   const snap = useSnapshot(state)
-
   const [ show, setShow ] = useState(true)
 
   return (
   <>
-      <div className={show ? "dashboard" : "dashboard hide"}>
-      
+    <div className={show ? "dashboard" : "dashboard hide"}>
       <div className='dashboard-container floor-material-buttons'>
         <p>Floor materials</p>
         <div className="floor-material-buttons-container">
@@ -50,6 +49,7 @@ export default function Dashboard({setLight, setEnv, light, env}) {
             type="color" 
             onChange={(e) => (state.wallColor = e.target.value)} 
           />
+          <Wall className='icon' size={25} />
         </div>
       </div>
 
@@ -59,7 +59,6 @@ export default function Dashboard({setLight, setEnv, light, env}) {
           <Lightbulb />
         </button>
       </div>
-
     </div>
 
     <Tooltip placement="top-start" title="hide/show Dashboard">
