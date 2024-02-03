@@ -23,9 +23,13 @@ export default function Checkout() {
         } = useContext(CartContext)
 
   //Date of delivery
-  let deliveryDate = new Date();
-  deliveryDate.setDate(deliveryDate.getDate() + 3)
-  const formattedDeliveryDate = format(deliveryDate, 'dd.MM.yyyy')
+  let deliveryDate = new Date()
+  
+  deliveryDate.setDate(deliveryDate.getDate() + 2)
+  const formattedDeliveryDateOne = format(deliveryDate, 'dd.MM.yyyy')
+
+  deliveryDate.setDate(deliveryDate.getDate() + 1)
+  const formattedDeliveryDateTwo = format(deliveryDate, 'dd.MM.yyyy')
 
 
   return (
@@ -60,7 +64,7 @@ export default function Checkout() {
                 <span onClick={() => increaseQuantity(item)}>+</span>
               </div>
               <H3 text={`$${item.quantity * item.price}`} />
-              <Trash onClick={() => removeFromCart(item)} className='trash' size={30} />
+              <Trash onClick={() => removeFromCart(item)} className='trash' size={23} />
             </div>
           </div>
         ))}
@@ -70,7 +74,7 @@ export default function Checkout() {
           <div className='checkout-item-container delivery'>
             <H3 text='Expected delivery' />
             <p>
-              <Truck className='icon' size={22} /> - {formattedDeliveryDate}
+              <Truck className='icon' size={22} /> {formattedDeliveryDateOne} - {formattedDeliveryDateTwo}
             </p>
           </div>
         )}
