@@ -15,11 +15,13 @@ export default function Nav() {
     <nav>
       <div>
         <LinkButton to="/">FLOOR PLANER</LinkButton>
-        <LinkButton to="/floor-materials">FLOOR MATERIALS</LinkButton>
+        <LinkButton to="/floor-materials">MATERIALS</LinkButton>
         <LinkButton to="/configurator" background="--accentColor" color="--lightColor">3D CONFIGURATOR</LinkButton>
       </div>
       <div>
-        <Link to="/login" className='icon-button' ><UserCircle /></Link>
+        <Link to="/login" className='icon-button'>
+          <UserCircle size={35} />
+        </Link>
         <Link to="/checkout" className='icon-button shopping-cart'>
           <ShoppingCart />
           {itemCount > 0 && <span className='cart-counter'>{itemCount}</span>}
@@ -28,3 +30,4 @@ export default function Nav() {
     </nav>
   )
 }
+
