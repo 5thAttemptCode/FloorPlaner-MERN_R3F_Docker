@@ -77,31 +77,59 @@ const loginUser = async (req, res) => {
     }
 }
 
-const getProfile = (req, res) => {
-    const { token } = req.cookies
+// Logout endpoint
+const logoutUser = (req, res) => {
+    res.clearCookie('token');
+    return res.json({ message: 'Logged out successfully' });
+}
+
+// const getProfile = (req, res) => {
+//     const { token } = req.cookies
   
+//     if (token) {
+//       try {
+//         jwt.verify(token, process.env.VITE_JWT_SECRET, (err, user) => {
+//           if (err) {
+//             res.status(500).json({ error: 'Error verifying token', details: err })
+//             throw err
+//           }
+//           res.json(user)
+//         })
+//       } catch(error) {
+//         console.log("Failed to decode or verify token:", error)
+//         res.status(500).json({ error: 'Failed to decode or verify token' })
+//       }
+//     } else {
+//       res.status(401).json({ error: 'Not logged in' })
+//     }
+//   }
+
+const getProfile = (req, res) => {
+    const { token } = req.cookies;
+  
+    // Check if token exists in the request cookies
     if (token) {
-      try {
-        jwt.verify(token, process.env.VITE_JWT_SECRET, (err, user) => {
-          if (err) {
-            res.status(500).json({ error: 'Error verifying token', details: err })
-            throw err
-          }
-          res.json(user)
-        })
-      } catch(error) {
-        console.log("Failed to decode or verify token:", error)
-        res.status(500).json({ error: 'Failed to decode or verify token' })
-      }
+        try {
+            jwt.verify(token, process.env.VITE_JWT_SECRET, (err, user) => {
+                if (err) {
+                    return res.status(500).json({ error: 'Error verifying token', details: err });
+                }
+                return res.json(user);
+            });
+        } catch(error) {
+            console.log("Failed to decode or verify token:", error);
+            return res.status(500).json({ error: 'Failed to decode or verify token' });
+        }
     } else {
-      res.status(401).json({ error: 'Not logged in' })
+        return res.status(401).json({ error: 'Not logged in' });
     }
-  }
+}
 
 
 module.exports = {
     test,
     registerUser,
     loginUser,
-    getProfile
+    getProfile,
+    logoutUser
 }
