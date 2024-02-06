@@ -16,10 +16,8 @@ export default function Register() {
   const navigate = useNavigate()
 
   const registerUser = async (e) => {
-
     e.preventDefault()
     const { email, password } = data
-
     try{
       const { data } = await axios.post("/register", {
         email, password
@@ -28,8 +26,8 @@ export default function Register() {
         toast.error(data.error)
       } else {
         setData({})
-        toast.success("Login successfull")
-        navigate("/checkout")//direct them later to shopping-cart or whatever
+        toast.success("Register successfull")
+        navigate("/")
       }
     } catch(error){
       console.log(error)
@@ -40,7 +38,7 @@ export default function Register() {
     <section className='user-form'>
       <form onSubmit={registerUser}>
         <H3 text="Register" />
-        <label>Name</label>
+        <label>Email</label>
         <input type="email" placeholder='Your e-mail' value={data.email} onChange={(e) => setData({ ...data, email: e.target.value})} />
         <label>Password</label>
         <input type="password" placeholder='Your password' value={data.password} onChange={(e) => setData({ ...data, password: e.target.value})} />

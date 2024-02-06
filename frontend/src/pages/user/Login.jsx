@@ -14,7 +14,6 @@ export default function Login() {
       email: "",
       password: ""
     })
-    
 
   const loginUser = async (e) => {
     e.preventDefault()
@@ -28,18 +27,18 @@ export default function Login() {
           toast.error(data.error)
         } else{
           setData({})
+          toast.success("Login successfull")
           navigate("/checkout")
         }
       } catch(error){
-
-      }
+    }
   }
     
   return (
     <section className='user-form'>
       <form onSubmit={loginUser}>
         <H3 text="Login" />
-        <label>Name</label>
+        <label>Email</label>
         <input type="email" placeholder='Your e-mail' value={data.email} onChange={(e) => setData({ ...data, email: e.target.value})} />
         <label>Password</label>
         <input type="password" placeholder='Your password' value={data.password} onChange={(e) => setData({ ...data, password: e.target.value})} />
