@@ -5,6 +5,13 @@
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    gap: 1.5rem;
-    padding-inline: 5em;
+    gap: 1rem;
+    padding-inline: clamp(0.625rem, -4.8438rem + 12.5vw, 5rem);
+
+    @media (max-width: 768px){
+        width: 100%;
+        padding-inline: 5vw;
+        min-height: 22vh;
+        max-height: 25vh;
+    }
 }
