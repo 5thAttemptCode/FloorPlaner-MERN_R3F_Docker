@@ -4,4 +4,8 @@
     border-radius: var(--borderRadiusOne);
     margin-block: 2rem;
     overflow: hidden;
+
+    @media (max-width: 768px){
+        flex-direction: column;
+    }
 }
