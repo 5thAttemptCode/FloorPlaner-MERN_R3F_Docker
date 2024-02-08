@@ -12,6 +12,6 @@
         width: 100%;
         padding-inline: 5vw;
         min-height: 22vh;
-        max-height: 25vh;
+        padding-block: 2rem;
     }
 }
