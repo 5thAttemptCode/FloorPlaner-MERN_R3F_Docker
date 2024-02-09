@@ -1,5 +1,5 @@
 footer{
-    height: 35vh;
+    height: 40vh;
     width: 100%;
     background: rgb(224, 224, 224);
 
@@ -12,22 +12,47 @@ footer{
         &:nth-child(1){
             border-bottom: 2px solid rgb(178, 178, 178);
             justify-content: space-between;
+
+            @media (max-width: 768px){
+                height: 70%;
+                flex-direction: column;
+                justify-content: space-evenly;
+            }
+
+            ul{
+                display: grid;
+                grid-template-columns: repeat(5, 1fr);
+                gap: 1rem;
+
+                @media (max-width: 1200px){
+                    grid-template-columns: repeat(3, 1fr);
+                }
+
+                @media (max-width: 900px){
+                    grid-template-columns: repeat(2, 1fr);
+                }
+            }
         }
 
         &:nth-child(2){
             flex-direction: column;
             justify-content: center;
             gap: 1rem;
-        }
 
-        ul{
-            display: flex;
-            gap: 2rem;
-            
-            li a{
-                color: black;
+            @media (max-width: 768px){
+                height: 30%;
+            }
+
+            ul{
+                display: flex;
+                gap: 1rem;
             }
         }
+
+        li a{
+            color: black;
+        }
+        
 
         p{
             margin-top: 1rem;
