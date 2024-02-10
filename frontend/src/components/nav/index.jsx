@@ -1,15 +1,19 @@
 import React, { useContext } from 'react'
 import './style.css'
 import { Link } from 'react-router-dom'
-import { ShoppingCart, UserCircle } from '@phosphor-icons/react'
+import { List, ShoppingCart, UserCircle } from '@phosphor-icons/react'
 import LinkButton from '../linkButton'
+import H3 from '../subHeaderH3'
 import { CartContext } from '../../context/cartContext'
+import { UserContext } from '../../context/userContext'
 
 
 export default function Nav() {
 
   const { cart } = useContext(CartContext)
+  const { user } = useContext(UserContext)
   const itemCount = cart.reduce((sum, item) => sum + item.quantity, 0)
+  const userPath = user ? "/profile" : "/login"
 
   return (
     <nav>
@@ -18,14 +22,20 @@ export default function Nav() {
         <LinkButton to="/floor-materials">MATERIALS</LinkButton>
         <LinkButton to="/configurator" background="--accentColor" color="--lightColor">3D CONFIGURATOR</LinkButton>
       </div>
+      <div className="logo">
+        F<span>P</span>
+      </div>
       <div>
-        <Link to="/login" className='icon-button'>
+        <Link to={userPath} className='icon-button'>
           <UserCircle size={35} />
         </Link>
         <Link to="/checkout" className='icon-button shopping-cart'>
           <ShoppingCart />
           {itemCount > 0 && <span className='cart-counter'>{itemCount}</span>}
         </Link>
+        <button className='menu-button'>
+          <List size={32} />
+        </button>
       </div>
     </nav>
   )
