@@ -97,5 +97,10 @@ nav{
     width: 300px;
     background: red;
     z-index: 1000;
-    transition: all 0.5s
+    transition: all 0.5s;
+    display: none;
+
+    @media (max-width: 831px){
+        display: block;
+    }
 }
