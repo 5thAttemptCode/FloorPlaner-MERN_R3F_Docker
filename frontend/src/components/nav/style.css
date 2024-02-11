@@ -89,3 +89,13 @@ nav{
     }
 }
 
+.responsive-menu{
+    position: fixed;
+    right: 5rem;
+    bottom: 0;
+    height: 80vh;
+    width: 300px;
+    background: red;
+    z-index: 1000;
+    transition: all 0.5s
+}
