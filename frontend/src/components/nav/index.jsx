@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react'
 import './style.css'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { List, ShoppingCart, UserCircle } from '@phosphor-icons/react'
 import LinkButton from '../linkButton'
 import H3 from '../subHeaderH3'
@@ -15,7 +15,12 @@ export default function Nav() {
   const itemCount = cart.reduce((sum, item) => sum + item.quantity, 0)
   const userPath = user ? "/profile" : "/login"
 
+  //Menu
   const [menuVisible, setMenuVisible] = useState(false)
+
+  const handleLinkClick = () => {
+    setMenuVisible(null)
+  }
 
   return (
     <>
@@ -41,8 +46,12 @@ export default function Nav() {
           </button>
         </div>
       </nav>
-      <div style={{ transform: menuVisible? 'translateX(0%)' : 'translateX(130%)'}} className="responsive-menu">
-
+      <div style={{ transform: menuVisible? 'translateX(-50%)' : 'translateX(200%)'}} className="responsive-menu">
+        <div className='responsive-menu-container'>
+          <LinkButton to="/" onClick={handleLinkClick}>FLOOR PLANER</LinkButton>
+          <LinkButton to="/floor-materials" onClick={handleLinkClick}>MATERIALS</LinkButton>
+          <LinkButton to="/configurator" onClick={handleLinkClick} background="--accentColor" color="--lightColor">3D CONFIGURATOR</LinkButton>
+        </div>
       </div>
     </>
   )
