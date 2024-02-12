@@ -4,16 +4,14 @@ import H3 from '../../components/subHeaderH3'
 import H4 from '../../components/subHeaderH4'
 import LinkButton from '../../components/linkButton'
 import { CartContext } from '../../context/cartContext'
-import { UserContext } from '../../context/userContext'
 import { Bank, ContactlessPayment, CreditCard, PaypalLogo, Trash, Truck } from '@phosphor-icons/react'
 import { format } from 'date-fns'
-
+import { Link } from 'react-router-dom'
 
 
 export default function Checkout() {
  
   //Context 
-  const { user } = useContext(UserContext)
   const { cart, 
           totalPrice, 
           removeFromCart, 
@@ -22,6 +20,7 @@ export default function Checkout() {
           updateQuantity 
         } = useContext(CartContext)
 
+        
   //Date of delivery
   let deliveryDate = new Date()
   
@@ -34,11 +33,16 @@ export default function Checkout() {
 
   return (
     <section className='checkout'>
-      {!!user && (<H3 text={user.email} />)}
-
       <div className='checkout-container'>
         <div className="checkout-item-container one">
-        <h1>Order summary</h1>
+        <h1>
+          {cart.length <= 0 ? 
+            <div>Your Cart is empty! Check our floor materials <Link to="/floor-materials">HERE</Link>, or configurate your room in 3D <Link to="/configurator">HERE!</Link></div>
+            : 
+            "Order Summary:"
+          }
+        </h1>
+
         {cart.map((item, index) => (
           <div className='checkout-item-container-container' key={index}>
             <div className="checkout-item info">
@@ -79,33 +83,39 @@ export default function Checkout() {
           </div>
         )}
 
-        <div className="checkout-item-container">
-          <H3 text="We accept" />
-          <span><PaypalLogo size={22} /> <CreditCard size={22} /> <ContactlessPayment size={22} /> <Bank size={22} /></span>
-        </div>
+        {cart.length > 0 && (
+          <div className="checkout-item-container">
+            <H3 text="We accept" />
+            <span><PaypalLogo size={22} /> <CreditCard size={22} /> <ContactlessPayment size={22} /> <Bank size={22} /></span>
+          </div>
+        )}
 
-        <div className="checkout-item-container checkout-total">
-          <div className="cost-listing">
-            <H4 text="Subtotal:" />
-            <H4 text={`$${(totalPrice() - ((totalPrice() / 100) * 19)).toFixed(2)}`} />
+        {cart.length > 0 && (
+          <div className="checkout-item-container checkout-total">
+            <div className="cost-listing">
+              <H4 text="Subtotal:" />
+              <H4 text={`$${(totalPrice() - ((totalPrice() / 100) * 19)).toFixed(2)}`} />
+            </div>
+            <div className="cost-listing">
+              <H4 text="Tax 19%:"/>
+              <H4 text={`$${((totalPrice() / 100) * 19).toFixed(2)}`} />
+            </div>
+            <div className="cost-listing">
+              <H4 text="Shipping:" />
+              <H4 text="FREE" />
+            </div>
+            <hr />
+            <div className="cost-listing">
+              <H3 text="Total:" />
+              <H3 text={`$${totalPrice()}`} />
+            </div>
           </div>
-          <div className="cost-listing">
-            <H4 text="Tax 19%:"/>
-            <H4 text={`$${((totalPrice() / 100) * 19).toFixed(2)}`} />
-          </div>
-          <div className="cost-listing">
-            <H4 text="Shipping:" />
-            <H4 text="FREE" />
-          </div>
-          <hr />
-          <div className="cost-listing">
-            <H3 text="Total:" />
-            <H3 text={`$${totalPrice()}`} />
-          </div>
-        </div>
+        )}
 
-        <LinkButton background="--accentColor" color="--lightColor">Pay and Buy</LinkButton>
-
+        {cart.length > 0 && (
+          <LinkButton background="--accentColor" color="--lightColor">Pay and Buy</LinkButton>
+        )}
+        
       </div>
 
     </section>

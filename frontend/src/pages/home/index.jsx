@@ -8,6 +8,7 @@ import Box from '../../components/box'
 import H2 from '../../components/subHeaderH2'
 import H3 from '../../components/subHeaderH3'
 import Description from '../../components/descriptionPtag'
+import HeaderContainer from '../../components/headerContainer'
 
 
 export default function Home() {
@@ -37,7 +38,10 @@ export default function Home() {
         </div>
       </div>
 
-      <H2 color="--darkColor" text="A CLOSER LOOK" />    
+      <HeaderContainer>
+        <H2 color="--darkColor" text="A CLOSER LOOK" /> 
+        <H3 text="Take a closer look at our materials and understand, why we are the best" />   
+      </HeaderContainer>
       {snap.floorInfo.map((floor, index) => (
         <Container key={index}>
           <div className="img">

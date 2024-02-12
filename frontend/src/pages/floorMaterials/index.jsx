@@ -9,6 +9,7 @@ import ShoppingEllipse from '../../components/shoppingEllipse'
 import Description from '../../components/descriptionPtag'
 import Container from '../../components/container'
 import Box from '../../components/box'
+import HeaderContainer from '../../components/headerContainer'
 
 
 export default function FloorMaterials() {
@@ -17,16 +18,16 @@ export default function FloorMaterials() {
 
   return (
     <section className='floor-materials'>
-      <span>
+      <HeaderContainer>
         <H2 color="--darkColor" text="Select the finest floor materials" />
         <H3 text="Each package contains 1m² of floor material" />
-      </span>
+      </HeaderContainer>
       {snap.textures.map((floor, index) => (
         <Container key={floor.id}>
           <img src={floor.url} alt="" />
           <Box>
             <H3 text={floor.name} />
-            <H4 text={`$${floor.price} per 1m²`} />
+            <H4 text={`$${floor.price} per m²`} />
             <Description description={floor.description} />
             <ShoppingEllipse floor={floor} />
           </Box>

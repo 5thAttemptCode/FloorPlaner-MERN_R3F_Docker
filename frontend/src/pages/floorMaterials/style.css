@@ -1,12 +1,6 @@
 .floor-materials{
     padding-top: 2rem;
 
-    span{
-        h2{
-            margin-block-end: 0.6rem;
-        }
-    }
-
     img{
         border-top-left-radius: var(--borderRadiusOne);
         border-bottom-left-radius: var(--borderRadiusOne);
@@ -14,5 +8,13 @@
         width: 50%;
         object-fit: cover;
         border: 1rem solid var(--offsetColor);
+
+        @media (max-width: 768px){
+            width: 100%;
+            height: 25vh;
+            border-top-left-radius: var(--borderRadiusOne);
+            border-top-right-radius: var(--borderRadiusOne);
+            border-bottom-left-radius: 0;
+        }
     }
 }
