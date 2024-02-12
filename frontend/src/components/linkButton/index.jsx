@@ -3,9 +3,9 @@ import './style.css'
 import { Link } from 'react-router-dom'
 
 
-export default function LinkButton({ background, color, to, children }) {
+export default function LinkButton({ background, color, to, children, onClick }) {
   return (
-    <Link className='link-button' style={{ background: `var(${background})`, color: `var(${color})` }} to={to}>
+    <Link onClick={onClick} className='link-button' style={{ background: `var(${background})`, color: `var(${color})` }} to={to}>
       {children}
     </Link>
   )
