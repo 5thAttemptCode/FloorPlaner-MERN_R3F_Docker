@@ -6,6 +6,7 @@ import { Lightbulb, Wall } from "@phosphor-icons/react"
 import { Tooltip } from '@mui/material'
 import ShoppingEllipse from '../../components/shoppingEllipse'
 import { FloorMaterialContext } from '../../context/floorButtonContext'
+import Popup from '../popup'
 
 
 export default function Dashboard({setLight, setEnv, light, env}) {
@@ -64,6 +65,8 @@ export default function Dashboard({setLight, setEnv, light, env}) {
     <Tooltip placement="top-start" title="hide/show Dashboard">
       <div onClick={() => setShow(!show)} className={show ? "toggle-button" : "toggle-button hide"}></div>
     </Tooltip>
+
+    <Popup />
   </>
   )
 }

@@ -1,0 +1,22 @@
+.popup{
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+    z-index: 1000;
+
+    > button{
+        padding: 0;
+    }
+}
+
+.base-info{
+    margin-bottom: 1rem;
+    margin-left: 1rem;
+    padding: 0.7em;
+    border-radius: 5px;
+    color: var(--lightColor);
+    border: 2px solid var(--lightColor);
+    background: rgb(0, 0, 0, 0.5);
+    max-width: 300px;
+    font-size: 14px;
+}
