@@ -28,8 +28,8 @@ footer{
                     grid-template-columns: repeat(3, 1fr);
                 }
 
-                @media (max-width: 900px){
-                    grid-template-columns: repeat(2, 1fr);
+                li a{
+                    white-space: nowrap;
                 }
             }
         }
@@ -49,8 +49,10 @@ footer{
             }
         }
 
-        li a{
-            color: black;
+        li{
+            a{
+              color: black;
+            }
         }
         
 
