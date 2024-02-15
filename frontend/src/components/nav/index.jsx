@@ -26,13 +26,11 @@ export default function Nav() {
     <>
       <nav>
         <div>
-          <LinkButton to="/">FLOOR PLANER</LinkButton>
+          <LinkButton to="/">FLOOR <span>PLANER</span></LinkButton>
           <LinkButton to="/floor-materials">MATERIALS</LinkButton>
           <LinkButton to="/configurator" background="--accentColor" color="--lightColor">3D CONFIGURATOR</LinkButton>
         </div>
-        <div className="logo">
-          F<span>P</span>
-        </div>
+          <Link className="logo" to="/">F<span>P</span></Link>
         <div>
           <Link to={userPath} className='icon-button'>
             <UserCircle size={35} />
@@ -41,8 +39,8 @@ export default function Nav() {
             <ShoppingCart />
             {itemCount > 0 && <span className='cart-counter'>{itemCount}</span>}
           </Link>
-          <button onClick={() => setMenuVisible(!menuVisible)}  className='menu-button'>
-            <List size={32} />
+          <button onClick={() => setMenuVisible(!menuVisible)} className='menu-button'>
+            <List className='icon' size={32} />
           </button>
         </div>
       </nav>
