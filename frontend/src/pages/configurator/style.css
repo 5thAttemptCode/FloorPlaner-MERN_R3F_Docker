@@ -1,9 +1,10 @@
 .canvas{
     position: relative;
     margin-top: 14vh;
-    padding-inline: 5rem;
+    padding-inline: clamp(0.3rem, -5.575rem + 18.8vw, 5rem);
     padding-bottom: 2rem;
     overflow: hidden;
+    touch-action: none; /*IMPORTANT for PresentationControls to work on mobile*/
 
     .sub-canvas{
         position: relative;
