@@ -11,10 +11,11 @@ export default function Footer() {
       <div className="footer-container">
         <H3 text="Floor Planer" />
         <ul>
-          <li><a href="/#" target="_blank">About Us</a></li>
-          <li><a href="/#" target="_blank">Career</a></li>
-          <li><a href="/#" target="_blank">Partners</a></li>
-          <li><a href="/#" target="_blank">Contact Us</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Career</a></li>
+          <li><a href="#">Partners</a></li>
+          <li><a href="#">Legal</a></li>
+          <li><a href="#">Contact Us</a></li>
         </ul>
         <div>
           <LinkButton background="--accentColor" color="--lightColor" to="/login">Login</LinkButton>

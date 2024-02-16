@@ -34,7 +34,7 @@ export default function Home() {
         </div>
         <div className='home-box lower'>
           <h1>DEFINING</h1>
-          <h1>&#169;FLOORS&nbsp;&nbsp;&nbsp;&nbsp;</h1>
+          <h1>&#169;FLOORS</h1>
         </div>
       </div>
 

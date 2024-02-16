@@ -100,7 +100,7 @@ nav{
 
 .responsive-menu{
     position: fixed;
-    top: 10vh;
+    top: 12vh;
     width: calc(100% - clamp(2rem, -5.5rem + 24vw, 8rem));
     background: var(--white);
     border: 2px solid var(--darkColor);

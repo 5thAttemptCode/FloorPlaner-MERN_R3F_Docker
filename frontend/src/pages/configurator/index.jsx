@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import './style.css'
 import { Canvas } from '@react-three/fiber'
 import { Center, Environment, OrbitControls, PresentationControls } from '@react-three/drei'
@@ -22,7 +22,7 @@ export default function Configurator() {
               <Room rotation-y={-Math.PI / 4} />
             </PresentationControls>
           </Center>
-          {light && <LightSwitch brightness={7} color={"white"} />}
+          {light && <LightSwitch brightness={4} color={"white"} />}
           {env && <Environment preset='city' />}
         </Canvas>
         

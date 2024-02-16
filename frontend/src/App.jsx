@@ -25,9 +25,10 @@ export default function App() {
   const { user } = useContext(UserContext)
   
   return (
+    <UserContextProvider>
     <FloorMaterialProvider>
       <CartProvider>
-        <UserContextProvider>
+  
           <BrowserRouter>
             <Nav />
             <ScrollToTop />
@@ -39,12 +40,13 @@ export default function App() {
               <Route path="/checkout" element={<Checkout />} />
               <Route path="/floor-materials" element={<FloorMaterials />} />
               <Route path="/login" element={!user ? <Login /> : <Navigate to="/profile" /> } />    
-              <Route path="/profile" element={user ? <UserProfile /> : <Navigate to="/login" /> } />
+              <Route path="/profile" element={<UserProfile />} />
             </Routes>
             <Footer />
           </BrowserRouter>
-        </UserContextProvider>
+
       </CartProvider>
     </FloorMaterialProvider>
+    </UserContextProvider>
   )
 }

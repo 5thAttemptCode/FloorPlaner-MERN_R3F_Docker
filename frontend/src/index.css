@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap');
+
 :root{
   --white: #fff;
   --lightColor: #f5f5f5;
@@ -15,7 +17,7 @@
   padding: 0;
   box-sizing: border-box;
   text-decoration: none;
-  font-family: Poppins;
+  font-family: 'Poppins', sans-serif;
   list-style: none;
 }
 
@@ -31,19 +33,19 @@ form{
 }
 
 section{
-  min-height: 100vh;
+  min-height: 86vh;
   margin-top: 14vh;
-  padding-inline: 5rem;
+  padding-inline: clamp(0.625rem, -4.8438rem + 17.5vw, 5rem);
   padding-bottom: 2rem;
 }
 
 button{
   background: var(--accentColor);
   color: var(--lightColor);
-  cursor: pointer;
   border: 2px solid var(--darkColor);
-  padding: 0.7em 1.5em;
   border-radius: var(--borderRadiusTwo);
+  cursor: pointer;
+  padding: 0.7em 1.5em;
   display: flex;
   gap: 0.2em;
 }
@@ -55,7 +57,7 @@ a{
 .icon-button{
   height: 50px;
   aspect-ratio: 1;
-  font-size: 27px;
+  font-size: clamp(1.25rem, 0.7031rem + 1.75vw, 1.6875rem);
   padding: 0;
   display: flex;
   justify-content: center;

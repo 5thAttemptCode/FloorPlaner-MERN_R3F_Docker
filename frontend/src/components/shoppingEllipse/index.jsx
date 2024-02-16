@@ -6,6 +6,7 @@ import AddToCartButton from '../addToCartbutton'
 export default function ShoppingEllipse({ floor }) {
 
   const [ quantity, setQuantity ] = useState(1)
+  
   return (
     <div className='shopping-ellipse'>
       <input 

@@ -81,7 +81,7 @@
                     color: var(--lightColor);
 
                     &:nth-child(2){
-                        padding-right: clamp(1rem, -10.25rem + 36vw, 10rem);
+                      padding-right: clamp(0rem, -12.5rem + 40vw, 10rem);
                     }
                 }
             } 
