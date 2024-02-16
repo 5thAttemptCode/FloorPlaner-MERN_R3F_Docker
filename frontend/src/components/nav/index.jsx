@@ -36,7 +36,7 @@ export default function Nav() {
             <UserCircle size={35} />
           </Link>
           <Link to="/checkout" className='icon-button shopping-cart'>
-            <ShoppingCart />
+            <ShoppingCart size={28} />
             {itemCount > 0 && <span className='cart-counter'>{itemCount}</span>}
           </Link>
           <button onClick={() => setMenuVisible(!menuVisible)} className='menu-button'>
@@ -44,6 +44,7 @@ export default function Nav() {
           </button>
         </div>
       </nav>
+
       <div style={{ transform: menuVisible? 'translateX(-50%)' : 'translateX(200%)'}} className="responsive-menu">
         <div className='responsive-menu-container'>
           <LinkButton to="/" onClick={handleLinkClick}>FLOOR PLANER</LinkButton>
