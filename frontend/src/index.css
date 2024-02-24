@@ -25,13 +25,6 @@ body{
   background: var(--backgroundColor);
 }
 
-form{
-  display: flex;
-  flex-direction: column;
-  height: 400px;
-  width: 300px;
-}
-
 section{
   min-height: 86vh;
   margin-top: 14vh;
