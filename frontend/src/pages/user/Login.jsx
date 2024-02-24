@@ -8,12 +8,14 @@ import H3 from '../../components/subHeaderH3'
 
 export default function Login() {
 
-    const navigate = useNavigate()
+  const navigate = useNavigate()
 
-    const [ data, setData ] = useState({
-      email: "",
-      password: ""
-    })
+  const [ data, setData ] = useState({
+    email: "",
+    password: ""
+  })
+
+  const [ isChecked, setChecked ] = useState(false)
 
   const loginUser = async (e) => {
     e.preventDefault()
@@ -33,6 +35,15 @@ export default function Login() {
       } catch(error){
     }
   }
+
+  const handleCheckboxChange = e => {
+    setChecked(e.target.checked)
+    if (e.target.checked) {
+      setData({ email: "mailhenry@mail.com", password: "mailHenry" })
+    } else {
+      setData({ email: "", password: "" })
+    }
+  }
     
   return (
     <section className='user-form'>
@@ -42,8 +53,11 @@ export default function Login() {
         <input type="email" placeholder='Your e-mail' value={data.email} onChange={(e) => setData({ ...data, email: e.target.value})} />
         <label>Password</label>
         <input type="password" placeholder='Your password' value={data.password} onChange={(e) => setData({ ...data, password: e.target.value})} />
+        <label>
+          <input type="checkbox" checked={isChecked} onChange={handleCheckboxChange} /> <span>Demo account</span>
+        </label>
         <button type='submit'>Login</button>
-        <p>Don't have an account yet? <Link to="/register">Sign Up</Link> here</p>
+        <p>Don't have an account yet? Sign up <Link to="/register">HERE</Link></p>
       </form>
     </section>
   )

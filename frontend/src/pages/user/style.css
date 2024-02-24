@@ -4,6 +4,10 @@
     align-items: center;
 
     form{
+        display: flex;
+        flex-direction: column;
+        min-height: 400px;
+        width: 300px;
         border: 2px solid var(--darkColor);
         border-radius: var(--borderRadiusOne);
         background: var(--white);

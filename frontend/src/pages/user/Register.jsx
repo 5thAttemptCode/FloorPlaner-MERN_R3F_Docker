@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import './style.css'
 import axios from 'axios'
 import { toast } from 'react-hot-toast'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import H3 from '../../components/subHeaderH3'
 
 
@@ -43,6 +43,7 @@ export default function Register() {
         <label>Password</label>
         <input type="password" placeholder='Your password' value={data.password} onChange={(e) => setData({ ...data, password: e.target.value})} />
         <button type='submit'>Submit</button>
+        <p>Already have an account? Login <Link to="/login">HERE</Link></p>
       </form>
     </section>
   )
