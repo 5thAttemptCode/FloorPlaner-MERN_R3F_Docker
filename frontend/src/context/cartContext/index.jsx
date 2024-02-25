@@ -16,7 +16,7 @@ export const CartProvider = (props) => {
       if (existingItem) {
         return currentCart.map(item =>
           item.name === newItem.name 
-            ? {...item, quantity: item.quantity + newItem.quantity}
+            ? {...item, quantity: item.quantity + Number(newItem.quantity)}
             : item
         )
       } else {
@@ -36,7 +36,7 @@ export const CartProvider = (props) => {
   const increaseQuantity = (itemToIncrease) => {
     setCart((currentCart) => 
       currentCart.map((item) => 
-        item.name === itemToIncrease.name ? {...item, quantity: + item.quantity + 1} : item
+        item.name === itemToIncrease.name ? {...item, quantity: Number(item.quantity) + 1} : item
       )
     )
   }
@@ -56,7 +56,7 @@ export const CartProvider = (props) => {
   const updateQuantity = (itemToUpdate, newQuantity) => {
     setCart((currentCart) => 
       currentCart.map((item) => 
-        item.name === itemToUpdate.name ? {...item, quantity: newQuantity} : item
+        item.name === itemToUpdate.name ? {...item, quantity: Number(newQuantity)} : item
       ).filter(item => item.quantity !== 0)
     )
   }
