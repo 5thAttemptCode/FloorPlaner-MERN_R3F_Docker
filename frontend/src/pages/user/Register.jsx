@@ -1,13 +1,15 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import './style.css'
 import axios from 'axios'
 import { toast } from 'react-hot-toast'
 import { Link, useNavigate } from 'react-router-dom'
 import H3 from '../../components/subHeaderH3'
+import { UserContext } from '../../context/userContext'
 
 
 export default function Register() {
 
+  const { setUser } = useContext(UserContext)
   const [ data, setData ] = useState({
     email: "",
     password: ""
@@ -25,6 +27,7 @@ export default function Register() {
       if(data.error){
         toast.error(data.error)
       } else {
+        setUser(data)
         setData({})
         toast.success("Register successfull")
         navigate("/")
