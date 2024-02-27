@@ -4,6 +4,7 @@ import H3 from '../../components/subHeaderH3'
 import H4 from '../../components/subHeaderH4'
 import LinkButton from '../../components/linkButton'
 import { CartContext } from '../../context/cartContext'
+import { OrderContext } from '../../context/orderContext'
 import { Bank, ContactlessPayment, CreditCard, PaypalLogo, Trash, Truck } from '@phosphor-icons/react'
 import { format } from 'date-fns'
 import { Link } from 'react-router-dom'
@@ -17,7 +18,8 @@ export default function Checkout() {
           removeFromCart, 
           increaseQuantity, 
           decreaseQuantity, 
-          updateQuantity 
+          updateQuantity,
+          clearCart 
         } = useContext(CartContext)
 
         
@@ -29,6 +31,20 @@ export default function Checkout() {
 
   deliveryDate.setDate(deliveryDate.getDate() + 1)
   const formattedDeliveryDateTwo = format(deliveryDate, 'dd.MM.yyyy')
+
+  
+  //Order Context
+  const { setOrder } = useContext(OrderContext)
+  const handleCheckout = () => {
+
+    setOrder({ 
+        items: cart, 
+        total: totalPrice, 
+        date: new Date()
+    })
+    clearCart()
+}
+
 
 
   return (
@@ -113,7 +129,7 @@ export default function Checkout() {
         )}
 
         {cart.length > 0 && (
-          <LinkButton background="--accentColor" color="--lightColor">Pay and Buy</LinkButton>
+          <LinkButton onClick={handleCheckout} background="--accentColor" color="--lightColor">Pay and Buy</LinkButton>
         )}
         
       </div>
