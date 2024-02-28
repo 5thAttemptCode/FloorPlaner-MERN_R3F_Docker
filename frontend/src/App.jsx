@@ -15,38 +15,47 @@ import { CartProvider } from './context/cartContext'
 import ScrollToTop  from './utils/scrollToTop'
 import { FloorMaterialProvider } from './context/floorButtonContext'
 import UserProfile from './pages/userProfile'
+import { OrderProvider } from './context/orderContext'
 
 
-axios.defaults.baseURL = "http://localhost:8000"
+axios.defaults.baseURL = "https://floor-planer-mern-r3-f-docker-server.vercel.app/"
+// axios.defaults.baseURL = "http://localhost:8000"
 axios.defaults.withCredentials = true
 
 export default function App() {
-
-  const { user } = useContext(UserContext)
-  
   return (
     <UserContextProvider>
-    <FloorMaterialProvider>
-      <CartProvider>
-  
-          <BrowserRouter>
-            <Nav />
-            <ScrollToTop />
-            <Toaster position="top-right" toastOption={{duration: 1000}} />
-            <Routes>
-              <Route path="/" element={<Home />} />          
-              <Route path="/register" element={<Register />} />
-              <Route path="/configurator" element={<Configurator />} />
-              <Route path="/checkout" element={<Checkout />} />
-              <Route path="/floor-materials" element={<FloorMaterials />} />
-              <Route path="/login" element={!user ? <Login /> : <Navigate to="/profile" /> } />    
-              <Route path="/profile" element={<UserProfile />} />
-            </Routes>
-            <Footer />
-          </BrowserRouter>
-
-      </CartProvider>
-    </FloorMaterialProvider>
+      <FloorMaterialProvider>
+        <CartProvider>
+          <OrderProvider>
+            <BrowserRouter>
+              <Nav />
+              <ScrollToTop />
+              <Toaster position="top-right" toastOption={{duration: 1000}} />
+              <Routes>
+                <Route path="/" element={<Home />} />          
+                <Route path="/register" element={<Register />} />
+                <Route path="/configurator" element={<Configurator />} />
+                <Route path="/checkout" element={<Checkout />} />
+                <Route path="/floor-materials" element={<FloorMaterials />} />
+                <Route path="/profile" element={<ProfileRoute />} />
+                <Route path="/login" element={<LoginRoute />} />    
+              </Routes>
+              <Footer />
+            </BrowserRouter>
+          </OrderProvider>
+        </CartProvider>
+      </FloorMaterialProvider>
     </UserContextProvider>
   )
+}
+
+const ProfileRoute = () => {
+  const { user } = useContext(UserContext)
+  return user ? <UserProfile /> : <Navigate to="/login" />
+}
+
+const LoginRoute = () => {
+  const { user } = useContext(UserContext)
+  return user ? <Navigate to="/profile" /> : <Login />
 }
