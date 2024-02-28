@@ -7,7 +7,9 @@ import { CartContext } from '../../context/cartContext'
 import { OrderContext } from '../../context/orderContext'
 import { Bank, ContactlessPayment, CreditCard, PaypalLogo, Trash, Truck } from '@phosphor-icons/react'
 import { format } from 'date-fns'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+import { UserContext } from '../../context/userContext'
+import toast from 'react-hot-toast'
 
 
 export default function Checkout() {
@@ -34,8 +36,20 @@ export default function Checkout() {
 
   
   //Order Context
+  const { user } = useContext(UserContext)
   const { setOrder } = useContext(OrderContext)
+  const navigate = useNavigate()
+
   const handleCheckout = () => {
+    if(!user){
+      toast.error("Please login first")
+      //Wrap the navigate function in a setTimeout 
+      //to ensure it runs cleanly
+      setTimeout(() => {
+        navigate('/login')
+      }, 0)
+      return
+    }
 
     setOrder({ 
         items: cart, 
@@ -43,8 +57,8 @@ export default function Checkout() {
         date: new Date()
     })
     clearCart()
+    toast.success("Thank you for your order")
 }
-
 
 
   return (
