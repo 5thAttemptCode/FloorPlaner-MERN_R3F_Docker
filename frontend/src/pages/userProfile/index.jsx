@@ -26,26 +26,36 @@ export default function UserProfile() {
 
   //Previous Order
   const { order } = useContext(OrderContext)
+
+  //Order ID
+  const generateRandom = () => {
+    return Math.floor(100000 + Math.random() * 900000)
+  }
   
   return (
     <section className='user-profile'>
-      {!!user && (<h3>Hello {user.email}</h3>)}
-      <button onClick={logout}>Logout</button>
-      <p>Your Last Order:</p>
+      <div className='user'>
+        {!!user && (<h3>Hello {user.email}</h3>)}
+        <button onClick={logout}>Logout</button>
+      </div>
+      <h3 className='prev-order-title'>Your previous orders:</h3>
       {order ? 
         <div className='prev-order'>
+          <div>
+            <p>Total: ${order.total()}</p>
+            <p>Placed on: {order.date.toLocaleDateString('en-GB')}</p>
+            <p>OrderID: {generateRandom()}</p>
+          </div>
           <ul>
             {order.items.map(item => (
               <li key={item.name}>
-              {item.quantity}x {item.name} - ${item.price}
+                {item.quantity}x {item.name} - ${item.price}
               </li>
             ))}
           </ul>
-          <p>Total: ${order.total()}</p>
-          <p>Placed on: {order.date.toLocaleString()}</p>
         </div>
       : 
-      <h3>Ohh you haven't placed an order before?  <br /> Do it <Link to="/">HERE</Link></h3>
+        <h3>Place your first order <Link to="/floor-materials">HERE</Link></h3>
       }
     </section>
   )
