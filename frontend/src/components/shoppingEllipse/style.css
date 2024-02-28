@@ -2,13 +2,15 @@
     display: flex; 
     gap: 1rem;
     padding: 0.5rem;
+    border: 1px solid var(--darkColor);
+    border-radius: var(--borderRadiusTwo);
 
     input{
         width: 5em;
+        border: 1px solid var(--darkColor);
         border-radius: var(--borderRadiusTwo);
         padding-inline: 1em;
         outline: none;
-        border: 2px solid var(--darkColor)
     }
 }
 
