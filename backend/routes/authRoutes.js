@@ -8,7 +8,7 @@ const { test, registerUser, loginUser, logoutUser, getProfile } = require('../co
 router.use(
   cors({
     credentials: true,
-    origin: [ "http://localhost:5173" ]
+    origin: [ "https://floor-planer.netlify.app/" ]
   }) 
 )
 
