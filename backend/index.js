@@ -6,6 +6,7 @@ const cookieParser = require('cookie-parser')
 
 const app = express()
 
+app.use(cors())
 
 //connect to DB
 mongoose.connect(process.env.VITE_MONGO_URL)
@@ -19,5 +20,5 @@ app.use(express.urlencoded({extended: false}))
 
 app.use("/", require('./routes/authRoutes'))
 
-const port = 8000
+const port = process.env.VITE_PORT
 app.listen(port, () => console.log(`Server is running on port ${port}`))
