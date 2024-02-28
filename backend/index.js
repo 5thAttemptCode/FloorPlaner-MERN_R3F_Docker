@@ -6,7 +6,15 @@ const cookieParser = require('cookie-parser')
 
 const app = express()
 
-app.use(cors())
+// Define specific CORS options
+const corsOptions = {
+  origin: 'https://floor-planer.netlify.app',
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Content-Type', 'Authorization'], 
+  credentials: true, 
+}
+  
+app.use(cors(corsOptions))
 
 //connect to DB
 mongoose.connect(process.env.VITE_MONGO_URL)
