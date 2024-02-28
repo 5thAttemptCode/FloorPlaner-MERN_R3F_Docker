@@ -51,7 +51,7 @@ export default function Login() {
   return (
     <section className='user-form'>
       <form onSubmit={loginUser}>
-        <H3 text="Login" />
+        <H3 text="Login to your account" />
         <label>Email</label>
         <input type="email" placeholder='Your e-mail' value={data.email} onChange={(e) => setData({ ...data, email: e.target.value})} />
         <label>Password</label>
