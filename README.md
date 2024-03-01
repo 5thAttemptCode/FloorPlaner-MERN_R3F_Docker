@@ -1,5 +1,7 @@
 Project: Floor Planner
 
+LINK: https://floor-planer.netlify.app/
+
 Techstack: MERN, React-Three-Fiber, Vite, Docker, Blender.
 
 This is my first MERN Stack application. It is inspired by an event during my time working as a roofer, that made me really understand the term "problem solving" with software.
