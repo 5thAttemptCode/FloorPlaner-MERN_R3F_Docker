@@ -6,6 +6,7 @@
 
     > button{
         padding: 0;
+        color: var(--white);
     }
 }
 
@@ -14,8 +15,8 @@
     margin-left: 1rem;
     padding: 0.7em;
     border-radius: 5px;
-    color: var(--lightColor);
-    border: 2px solid var(--lightColor);
+    color: var(--white);
+    border: 2px solid var(--white);
     background: rgb(0, 0, 0, 0.5);
     max-width: 300px;
     font-size: 14px;

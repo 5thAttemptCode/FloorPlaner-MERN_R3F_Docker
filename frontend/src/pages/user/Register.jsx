@@ -1,10 +1,9 @@
 import React, { useContext, useState } from 'react'
-import './style.css'
 import axios from 'axios'
 import { toast } from 'react-hot-toast'
-import { Link, useNavigate } from 'react-router-dom'
-import H3 from '../../components/subHeaderH3'
+import { useNavigate } from 'react-router-dom'
 import { UserContext } from '../../context/userContext'
+import UserForm from '../../components/userForm'
 
 
 export default function Register() {
@@ -38,16 +37,14 @@ export default function Register() {
   }
 
   return (
-    <section className='user-form'>
-      <form onSubmit={registerUser}>
-        <H3 text="Sign-up for a new account" />
-        <label>Email</label>
-        <input type="email" placeholder='Your e-mail' value={data.email} onChange={(e) => setData({ ...data, email: e.target.value})} />
-        <label>Password</label>
-        <input type="password" placeholder='Your password' value={data.password} onChange={(e) => setData({ ...data, password: e.target.value})} />
-        <button type='submit'>Submit</button>
-        <p>Already have an account? Login <Link to="/login">HERE</Link></p>
-      </form>
-    </section>
+    <UserForm
+      title="Sign-up for a new account"
+      linkText="Already have an account? Login"
+      linkTo="/login"
+      buttonText="Submit"
+      onFormSubmit={registerUser}
+      onDataChange={setData}
+      data={data}
+    />
   )
 }

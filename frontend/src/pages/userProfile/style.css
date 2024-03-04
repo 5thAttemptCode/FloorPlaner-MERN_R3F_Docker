@@ -6,8 +6,8 @@
     gap: 1rem;
 
     .user{
-        border: 2px solid var(--darkColor);
-        background: var(--white);
+        border: 2px solid var(--contrastColor);
+        background: var(--backgroundColorSecond);
         padding: 1.5rem 2rem;
         border-radius: 5px;
         margin-bottom: 1rem;
@@ -22,19 +22,19 @@
         margin-right: 6.5rem;
         padding-left: 1rem;
         margin-bottom: 2rem;
-        border-left: 2px solid var(--darkColor);
+        border-left: 2px solid var(--contrastColor);
     }
 
     .prev-order{
-        border: 2px solid var(--darkColor);
-        background: var(--white);
+        border: 2px solid var(--contrastColor);
+        background: var(--backgroundColorSecond);
         padding: 1.5rem 2rem;
         border-radius: 5px;
         display: flex;
 
         div{
             padding: 0 2rem 1rem 0;
-            border-right: 1px solid var(--darkColor);
+            border-right: 1px solid var(--contrastColor);
 
             p{
                 font-weight: 500;
@@ -54,7 +54,7 @@
 
             div{
                 padding: 0 0rem 1rem 0;
-                border-bottom: 1px solid var(--darkColor);
+                border-bottom: 1px solid var(--contrastColor);
                 border-right: 0;
             }
     
@@ -65,7 +65,7 @@
     }
 
     > h3 > a{
-        color: var(--darkColor);
+        color: var(--fontColor);
         text-decoration: underline;
     }
 }

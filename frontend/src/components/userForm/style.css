@@ -1,0 +1,38 @@
+.user-form{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  form{
+    display: flex;
+    flex-direction: column;
+    min-height: 400px;
+    width: 300px;
+    border: 2px solid var(--contrastColor);
+    border-radius: var(--borderRadiusOne);
+    background: var(--backgroundColorSecond);
+    padding: 2rem 1.5rem;
+    margin-bottom: 5rem;
+
+    & label,
+    & > button{
+      margin-top: 2rem;
+    }
+
+    & > button{
+      margin-inline: auto;
+      border: 2px solid var(--fontColor);
+      color: var(--white);
+    }
+
+    p{
+      margin-top: 1rem;
+        
+      a{
+        color: var(--fontColor);
+        font-weight: 600;
+        text-decoration: underline;
+      }
+    }
+  }
+}

@@ -7,7 +7,7 @@
         height: 50vh;
         width: 50%;
         object-fit: cover;
-        border: 1rem solid var(--offsetColor);
+        border: 1rem solid var(--backgroundColorThird);
 
         @media (max-width: 768px){
             width: 100%;

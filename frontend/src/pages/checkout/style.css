@@ -12,7 +12,7 @@
         width: 60%;
         padding: 2rem clamp(0.75rem, -2.0625rem + 9vw, 3rem);
         margin-top: 1rem;
-        background: var(--offsetColor);
+        background: var(--backgroundColorThird);
         border-radius: 5px;
 
         @media (max-width: 1200px){
@@ -26,7 +26,7 @@
         .checkout-item-container{
             width: 100%;
             padding: 1rem;
-            background: var(--white);
+            background: var(--backgroundColorSecond);
             border-radius: 5px;
 
             &.one{
@@ -89,7 +89,7 @@
     
                     div{
                         display: flex;
-                        border: 2px solid var(--offsetColor);
+                        border: 2px solid var(--backgroundColorThird);
                         border-radius: 5px;
     
                         input, span{
@@ -101,7 +101,7 @@
                         }
     
                         span{
-                            background: var(--offsetColor);
+                            background: var(--backgroundColorThird);
                             cursor: pointer;
                         }
     
@@ -125,7 +125,8 @@
     
                     .trash{
                         cursor: pointer;
-                        opacity: 0.2;
+                        opacity: 0.5;
+                        color: var(--fontColor);
                     }
                 }
             }
@@ -160,7 +161,7 @@
         }
 
         .checkout-total{
-            border-bottom: 4px solid black;
+            border-bottom: 4px solid var(--contrastColor);
 
             h3{
                 padding-top: 0.5rem;

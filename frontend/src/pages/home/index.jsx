@@ -28,8 +28,8 @@ export default function Home() {
             That's why we created the digital floor planner.
           </p>
           <div className="cta">
-            <LinkButton background="--accentColor" color="--lightColor" to="/configurator">Configurate your floor</LinkButton>
-            <LinkButton background="--darkColor" color="--lightColor" to="/register">Create Account</LinkButton>
+            <LinkButton background="--accentColor" color="--white" to="/configurator">Configurate your floor</LinkButton>
+            <LinkButton background="--black" color="--white" to="/register">Create Account</LinkButton>
           </div>
         </div>
         <div className='home-box lower'>

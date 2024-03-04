@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import { List, ShoppingCart, UserCircle } from '@phosphor-icons/react'
 import LinkButton from '../linkButton'
 import { CartContext } from '../../context/cartContext'
+import Themeswitch from '../themeSwitch'
 
 
 export default function Nav() {
@@ -24,10 +25,11 @@ export default function Nav() {
         <div>
           <LinkButton to="/">FLOOR <span>PLANER</span></LinkButton>
           <LinkButton to="/floor-materials">MATERIALS</LinkButton>
-          <LinkButton to="/configurator" background="--accentColor" color="--lightColor">3D CONFIGURATOR</LinkButton>
+          <LinkButton to="/configurator" background="--accentColor" color="--white">3D CONFIGURATOR</LinkButton>
         </div>
           <Link className="logo" to="/">F<span>P</span></Link>
         <div>
+          <Themeswitch />
           <Link to="/login" className='icon-button'>
             <UserCircle size={35} />
           </Link>
@@ -45,7 +47,7 @@ export default function Nav() {
         <div className='responsive-menu-container'>
           <LinkButton to="/" onClick={handleLinkClick}>FLOOR PLANER</LinkButton>
           <LinkButton to="/floor-materials" onClick={handleLinkClick}>MATERIALS</LinkButton>
-          <LinkButton to="/configurator" onClick={handleLinkClick} background="--accentColor" color="--lightColor">3D CONFIGURATOR</LinkButton>
+          <LinkButton to="/configurator" onClick={handleLinkClick} background="--accentColor" color="--white">3D CONFIGURATOR</LinkButton>
         </div>
       </div>
     </>

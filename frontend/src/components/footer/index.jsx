@@ -18,7 +18,7 @@ export default function Footer() {
           <li><a href="#">Contact Us</a></li>
         </ul>
         <div>
-          <LinkButton background="--accentColor" color="--lightColor" to="/login">Login</LinkButton>
+          <LinkButton background="--accentColor" color="--white" to="/login">Login</LinkButton>
           <LinkButton to="/register">Register</LinkButton>
         </div>
       </div>

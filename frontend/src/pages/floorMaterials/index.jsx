@@ -19,7 +19,7 @@ export default function FloorMaterials() {
   return (
     <section className='floor-materials'>
       <HeaderContainer>
-        <H2 color="--darkColor" text="Select the finest floor materials" />
+        <H2 color="--fontColor" text="Select the finest floor materials" />
         <H3 text="Each package contains 1m² of floor material" />
       </HeaderContainer>
       {snap.textures.map((floor, index) => (

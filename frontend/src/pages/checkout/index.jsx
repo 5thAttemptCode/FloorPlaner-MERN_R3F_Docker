@@ -143,7 +143,7 @@ export default function Checkout() {
         )}
 
         {cart.length > 0 && (
-          <LinkButton onClick={handleCheckout} background="--accentColor" color="--lightColor">Pay and Buy</LinkButton>
+          <LinkButton onClick={handleCheckout} background="--accentColor" color="--white">Pay and Buy</LinkButton>
         )}
         
       </div>

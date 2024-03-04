@@ -1,19 +1,24 @@
 .button{
-    .icon{
-        margin-top: 0.2rem;
-    }
+  color: var(--white);
+  border: 1px solid var(--contrastColor);
+  
+  .icon{
+    margin-top: 0.2rem;
+    color: var(--white);
+  } 
 }
 
 .clicked{
-    overflow: hidden;
+  overflow: hidden;
 
-    .icon{
-        animation: moving 0.5s;
-    }
+  .icon{
+    animation: moving 0.5s;
+}
 }
 
 @keyframes moving{
-    100%{
-        transform: translateX(300%);
-    }
+  100%{
+    transform: translateX(300%);
+  }
 }
+

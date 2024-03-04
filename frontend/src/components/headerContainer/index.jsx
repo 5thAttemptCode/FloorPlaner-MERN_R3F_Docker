@@ -4,7 +4,7 @@ import './style.css'
 
 export default function HeaderContainer({ children }) {
 
-    return (
+  return (
     <div className='header-container'>
       {children}
     </div>

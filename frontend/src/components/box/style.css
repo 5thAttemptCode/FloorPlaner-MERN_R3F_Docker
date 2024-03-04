@@ -1,17 +1,17 @@
 .box{
-    width: 50%;
-    min-height: 40vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 1rem;
-    padding-inline: clamp(0.625rem, -4.8438rem + 12.5vw, 5rem);
+  width: 50%;
+  min-height: 40vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1rem;
+  padding-inline: clamp(0.625rem, -4.8438rem + 12.5vw, 5rem);
 
-    @media (max-width: 768px){
-        width: 100%;
-        padding-inline: 5vw;
-        min-height: 22vh;
-        padding-block: 2rem;
-    }
+  @media (max-width: 768px){
+    width: 100%;
+    padding-inline: 5vw;
+    min-height: 22vh;
+    padding-block: 2rem;
+  }
 }

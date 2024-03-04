@@ -1,16 +1,36 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap');
 
 :root{
-  --white: #fff;
-  --lightColor: #f5f5f5;
-  --backgroundColor: #f2f2f2;
-  --darkColor: #171717;
+  /*____Constant____*/
   --accentColor: #572dff;
-  --offsetColor: #e0e1ea;
+  --floorMaterialColor: #9cfe27;
+  --white: #fff;
+  --black: #171717;
 
   --borderRadiusOne: 30px;
   --borderRadiusTwo: 50px;
+
+  
+  /*____Variables____*/
+
+  --fontColor: #171717;
+  --backgroundColor: #f2f2f2;
+  --backgroundColorSecond: #ffffff;
+  --backgroundColorThird: #e0e1ea;
+  --contrastColor: #171717;
+  --footerBackground: #e0e0e0;
+
 }
+
+.dark-mode{
+  --fontColor: #f5f5f5;
+  --backgroundColor: #1f1f1f;
+  --backgroundColorSecond: #121212;
+  --backgroundColorThird: #3a3a3a;
+  --contrastColor: #f5f5f5;
+  --footerBackground: #555555;
+}
+
 
 *{
   margin: 0;
@@ -23,6 +43,7 @@
 
 body{
   background: var(--backgroundColor);
+  color: var(--fontColor);
 }
 
 section{
@@ -41,6 +62,7 @@ button{
   padding: 0.7em 1.5em;
   display: flex;
   gap: 0.2em;
+  font-weight: 600;
 }
 
 a{

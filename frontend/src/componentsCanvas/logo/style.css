@@ -4,6 +4,6 @@
     left: 1.5em;
 
     > h3, > h4{
-        color: var(--lightColor);
+        color: var(--white);
     }
 }

@@ -6,8 +6,8 @@ nav{
     width: calc(100% - clamp(1rem, -8rem + 32vw, 10rem));
     display: flex;
     justify-content: space-between;
-    background: var(--white);
-    border: 2px solid var(--darkColor);
+    background: var(--backgroundColorSecond);
+    border: 2px solid var(--contrastColor);
     border-radius: var(--borderRadiusTwo);
     margin-top: 0.75rem;
     padding: 0.5rem;
@@ -19,7 +19,7 @@ nav{
       font-weight: 600;
       margin-block: auto;
       margin-left: 1rem;
-      color: var(--darkColor);
+      color: var(--fontColor);
 
       span{
         color: var(--accentColor)
@@ -45,15 +45,19 @@ nav{
 
         > a, 
         > button{
-            color: var(--darkColor);
+            color: var(--fontColor);
             padding: 0.7rem 1.5rem;
             border-radius: var(--borderRadiusTwo);
-            border: 2px solid var(--darkColor);
+            border: 2px solid var(--fontColor);
             font-weight: 600;
 
             > span{
                 color: var(--accentColor);
             }
+        }
+
+        .theme-switch{
+            color: var(--white);
         }
 
         .shopping-cart{
@@ -67,8 +71,8 @@ nav{
                 aspect-ratio: 1;
                 border-radius: 50%;
                 background: var(--accentColor);
-                border: 2px solid var(--darkColor);
-                color: var(--lightColor);
+                border: 2px solid var(--fontColor);
+                color: var(--white);
                 font-size: 20px;
                 display: flex;
                 justify-content: center;
@@ -84,7 +88,7 @@ nav{
             display: flex;
             justify-content: center;
             align-items: center;
-            color: var(--lightColor);
+            color: var(--white);
             display: none;
 
             @media (max-width: 831px){
@@ -102,8 +106,8 @@ nav{
     position: fixed;
     top: 12vh;
     width: calc(100% - clamp(2rem, -5.5rem + 24vw, 8rem));
-    background: var(--white);
-    border: 2px solid var(--darkColor);
+    background: var(--backgroundColorSecond);
+    border: 2px solid var(--contrastColor);
     border-radius: var(--borderRadiusOne);
     z-index: 1000;
     transition: all 0.5s;
