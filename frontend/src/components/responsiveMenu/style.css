@@ -1,0 +1,28 @@
+.responsive-menu{
+    position: fixed;
+    top: 12vh;
+    width: calc(100% - clamp(2rem, -5.5rem + 24vw, 8rem));
+    background: var(--backgroundColorSecond);
+    border: 2px solid var(--contrastColor);
+    border-radius: var(--borderRadiusOne);
+    z-index: 1000;
+    transition: all 0.5s;
+    display: none;
+    left: 50%;
+    padding-block: 3rem;
+
+    .responsive-menu-container{
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+
+        > a{
+            margin: 0 auto;
+        }
+    }
+
+    @media (max-width: 831px){
+        display: block;
+    }
+}

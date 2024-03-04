@@ -1,23 +1,39 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useState, useEffect } from 'react'
 import './style.css'
 import { Link } from 'react-router-dom'
 import { List, ShoppingCart, UserCircle } from '@phosphor-icons/react'
 import LinkButton from '../linkButton'
 import { CartContext } from '../../context/cartContext'
 import Themeswitch from '../themeSwitch'
+import ResponsiveMenu from '../responsiveMenu'
 
 
 export default function Nav() {
 
+  //Cart
   const { cart } = useContext(CartContext)
   const itemCount = cart.reduce((sum, item) => sum + Number(item.quantity), 0)
 
-  //Menu
+  //Responsive-menu
   const [menuVisible, setMenuVisible] = useState(false)
 
   const handleLinkClick = () => {
-    setMenuVisible(null)
+    setMenuVisible(false)
   }
+
+  const handleOutsideClick = (event) => {
+    if (menuVisible && !event.target.closest('.responsive-menu')) {
+      setMenuVisible(false)
+    }
+  }
+
+  useEffect(() => {
+    window.addEventListener('mousedown', handleOutsideClick)
+
+    return () => {
+      window.removeEventListener('mousedown', handleOutsideClick)
+    }
+  }, [menuVisible])
 
   return (
     <>
@@ -43,13 +59,7 @@ export default function Nav() {
         </div>
       </nav>
 
-      <div style={{ transform: menuVisible? 'translateX(-50%)' : 'translateX(200%)'}} className="responsive-menu">
-        <div className='responsive-menu-container'>
-          <LinkButton to="/" onClick={handleLinkClick}>FLOOR PLANER</LinkButton>
-          <LinkButton to="/floor-materials" onClick={handleLinkClick}>MATERIALS</LinkButton>
-          <LinkButton to="/configurator" onClick={handleLinkClick} background="--accentColor" color="--white">3D CONFIGURATOR</LinkButton>
-        </div>
-      </div>
+      <ResponsiveMenu isVisible={menuVisible} handleLinkClick={handleLinkClick} />
     </>
   )
 }
