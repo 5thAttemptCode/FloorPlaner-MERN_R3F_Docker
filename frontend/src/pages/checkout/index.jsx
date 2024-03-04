@@ -67,7 +67,12 @@ export default function Checkout() {
         <div className="checkout-item-container one">
         <h1>
           {cart.length <= 0 ? 
-            <div>Your Cart is empty! Check our floor materials <Link to="/floor-materials">HERE</Link>, or configurate your room in 3D <Link to="/configurator">HERE!</Link></div>
+            <div>
+              Your Cart is empty! Check our floor materials 
+              <Link to="/floor-materials">HERE</Link>, 
+              or configurate your room in 3D 
+              <Link to="/configurator">HERE!</Link>
+            </div>
             : 
             "Order Summary:"
           }
@@ -116,7 +121,12 @@ export default function Checkout() {
         {cart.length > 0 && (
           <div className="checkout-item-container">
             <H3 text="We accept" />
-            <span><PaypalLogo size={22} /> <CreditCard size={22} /> <ContactlessPayment size={22} /> <Bank size={22} /></span>
+            <span>
+              <PaypalLogo size={22} /> 
+              <CreditCard size={22} /> 
+              <ContactlessPayment size={22} /> 
+              <Bank size={22} />
+            </span>
           </div>
         )}
 
@@ -143,7 +153,13 @@ export default function Checkout() {
         )}
 
         {cart.length > 0 && (
-          <LinkButton onClick={handleCheckout} background="--accentColor" color="--white">Pay and Buy</LinkButton>
+          <LinkButton 
+            onClick={() => {handleCheckout(); window.scrollTo(0, 0);}} 
+            background="--accentColor" 
+            color="--white"
+          >
+            Pay and Buy
+          </LinkButton>
         )}
         
       </div>
