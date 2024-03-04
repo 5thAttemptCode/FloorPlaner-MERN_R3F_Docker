@@ -101,7 +101,7 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    right: calc(230px + 1rem);
+    right: calc(250px + 1rem);
     height: 50px;
     width: 50px;
     clip-path: polygon(100% 0, 50% 50%, 100% 100%);
