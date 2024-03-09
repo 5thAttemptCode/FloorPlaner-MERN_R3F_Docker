@@ -24,8 +24,8 @@
 
 .dark-mode{
   --fontColor: #f5f5f5;
-  --backgroundColor: #1f1f1f;
-  --backgroundColorSecond: #121212;
+  --backgroundColor: #121212;
+  --backgroundColorSecond: #1f1f1f;
   --backgroundColorThird: #3a3a3a;
   --contrastColor: #f5f5f5;
   --footerBackground: #555555;
