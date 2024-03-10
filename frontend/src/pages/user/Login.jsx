@@ -35,6 +35,8 @@ export default function Login() {
           navigate("/profile")
         }
       } catch(error){
+        console.log(error)
+        toast.error("An error occurred")
     }
   }
 
