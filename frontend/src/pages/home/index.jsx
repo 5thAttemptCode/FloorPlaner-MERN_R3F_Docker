@@ -19,7 +19,7 @@ export default function Home() {
     <section className='home'>
       <div className="container">
         {/* muted is crucial for autoplay */}
-        <video src="/video.mp4" muted autoPlay loop /> 
+        <video src="/video.mp4" muted autoPlay loop playsInline /> 
         <div className='home-box upper'>
           <H2 text="DIGITAL" /> 
           <H2 text="PLANING" /> 
