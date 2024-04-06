@@ -2,6 +2,7 @@
   display: flex;
   background: var(--backgroundColorSecond);
   border-radius: var(--borderRadiusOne);
+  border: 2px solid var(--fontColor);
   margin-block: 2rem;
   overflow: hidden;
 
