@@ -1,6 +1,6 @@
 .button{
   color: var(--white);
-  border: 1px solid var(--contrastColor);
+  border: 2px solid var(--contrastColor);
   
   .icon{
     margin-top: 0.2rem;
